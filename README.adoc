@@ -14,9 +14,9 @@ Projet est réalisé par::
 
 Groupe 3A2 Sujet 2 : Solardege et consommation électrique
 
-- https://github.com/Alexis-Dpnt[Alexis DUPONT]
-- https://github.com/GuillaumeLarroutis[Guillaume LARROUTIS]
-- https://github.com/E13e[Jérémy RATSIMBA]
+- https://github.com/Alexis-Dpnt[Alexis DUPONT : SCRUM Master]
+- https://github.com/GuillaumeLarroutis[Guillaume LARROUTIS : Product owner]
+- https://github.com/E13e[Jérémy RATSIMBA : Développeur]
 
 == Réalisations 
 
