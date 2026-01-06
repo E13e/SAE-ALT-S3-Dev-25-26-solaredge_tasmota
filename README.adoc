@@ -2,7 +2,7 @@
 
 = Titre du Document
 :toc:
-: toc-title: Sommaire
+: toc-title : Sommaire
 
 == Section 1
 Contenu de la section 1
