@@ -10,6 +10,8 @@
         const host = "mqtt.iut-blagnac.fr"; // URL du broker
         const port = 8883;        // Port du broker
         const clientId = "client_" + Math.random().toString(36).substr(2, 9); // Identifiant unique du client
+        const username = "student";
+        const password = "student";
 
         function onFailure(message) {
             console.log("Échec de connexion à " + host + " : " + message.errorMessage);
@@ -35,9 +37,9 @@
         }
 
         function MQTTconnect() {
+            /*
             console.log("Connexion à " + host + " sur le port " + port);
             mqtt = new Paho.MQTT.Client(host, port, clientId);
-
 
 
 
@@ -48,16 +50,35 @@
                 timeout: 3,
                 onSuccess: onConnect,
                 onFailure: onFailure,
+                userName : username, 
+                password : password
             };
 
             mqtt.connect(options);
-        }
+            */
+            ///*
+            const mqtt = require('mqtt');
+
+               const url = 'mqtt.iut-blagnac.fr:8883';
+               const options = {
+                // Clean session
+                clean: true,
+                connectTimeout: 4000,
+                // Authentication
+                clientId: 'guillaume',
+                username: 'student',
+                password: 'student',
+                }
+                const client  = mqtt.connect(url, options)            
+            //*/
+       }
     </script>
 </head>
 
 <body onload="MQTTconnect()">
     <h1>Message MQTT</h1>
     <p id="data">Connexion en cours...</p>
+
 </body>
 </html>
 
