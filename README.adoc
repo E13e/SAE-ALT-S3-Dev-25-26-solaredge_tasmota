@@ -29,10 +29,10 @@ Groupe 3A2 Sujet 2 : Solardege et consommation électrique
 
 === Sprint 1
 
-|==
+|===
 |  Tâche  |  Nom  |  Alexis  |  Guillaume  |  Jérémy  |
 |    |    |    |    |    |
-|==
+|===
 == Réunions 
 
  * Le premier Sprint dure du 05 / 01 au 13 / 01 (avec une évaluation le 14), soit une durée d'environ 10 jours.
