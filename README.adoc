@@ -32,18 +32,18 @@ Groupe 3A2 Sujet 2 : Solardege et consommation électrique
 |===
 |  Tâche  |  Nom  |  Alexis  |  Guillaume  |  Jérémy  |  etat (en cours, à tester, fait)  
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/11)  |  #3 Créer Image docker  |    |    |  x  |  fait
-|  #14(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/14)  |  #10 Créer le site  |    |    |  x  | fait
-|  #15(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/15)  |  #10 Récupérer les informations envoyées par les panneaux solaire  |    |  x  |    |  en cours
-|  #16(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/16)  |  #10 inclure les informations récupérées dans le site  |    |    |  x  |  en cours
-|  #17(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/17)  |  #10 faire en sorte que les informations du site se mettent à jour sans que l'utilisateur rafraichisse le site  |    |    |    |
-|  #18(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/18)  |  #13 afficher une alerte sur le site si il y a une surconsommation  |    |    |    |
-|  #19(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/19)  |  #13 afficher une alerte sur le M5 si il y a une surconsommation  |  x  |    |    |  en cours
-|  #20(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/20)  |  #13 jouer un son d'alerte sur le site si il y a une surconsommation  |    |    |    |
-|  #22(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22)  |  #9 éteindre la prise si il y a une surconsommation  |  x  |    |    |  en attente
-|  #23(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/23)  |  #4 acquitter une alerte en appuyant sur un bouton du M5  |    |    |    |
-|  #24(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/24)  |  #4 rétablir l'affichage normal sur l'écran du M5  |    |    |    |
-|  #25(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/25)  |  Envoyer l'information d'aquittance avec le M5Stack  |    |    |    |
-|  #26(https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/26)  |  Traiter l'information sur le site  |    |    |    |
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/14)  |  #10 Créer le site  |    |    |  x  | fait
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/15)  |  #10 Récupérer les informations envoyées par les panneaux solaire  |    |  x  |    |  en cours
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/16)  |  #10 inclure les informations récupérées dans le site  |    |    |  x  |  en cours
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/17)  |  #10 faire en sorte que les informations du site se mettent à jour sans que l'utilisateur rafraichisse le site  |    |    |    |
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/18)  |  #13 afficher une alerte sur le site si il y a une surconsommation  |    |    |    |
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/19)  |  #13 afficher une alerte sur le M5 si il y a une surconsommation  |  x  |    |    |  en cours
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/20)  |  #13 jouer un son d'alerte sur le site si il y a une surconsommation  |    |    |    |
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22)  |  #9 éteindre la prise si il y a une surconsommation  |  x  |    |    |  en attente
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/23)  |  #4 acquitter une alerte en appuyant sur un bouton du M5  |    |    |    |
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/24)  |  #4 rétablir l'affichage normal sur l'écran du M5  |    |    |    |
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/25)  |  Envoyer l'information d'aquittance avec le M5Stack  |    |    |    |
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/26)  |  Traiter l'information sur le site  |    |    |    |
 |    |    |    |    |    |
 |    |    |    |    |    |
 |    |    |    |    |    |
