@@ -12,10 +12,12 @@ print("On commence...")
 
 # callback appele lors de la reception d'un message
 def get_data(mqttc, obj, msg):
-    print("test")
     jsonMsg = json.loads(msg.payload.decode())
-    print("test")
-    print(json.dumps(jsonMsg, indent=2, ensure_ascii=False))
+    test = json.dumps(jsonMsg, indent=2, ensure_ascii=False) 
+    print(test)
+
+    with open('./pageweb.php', 'w') as fichier:
+        fichier.write(#génération page php)
 
 mqttc = mqtt.Client()
 mqttc.username_pw_set(username, pwd)
