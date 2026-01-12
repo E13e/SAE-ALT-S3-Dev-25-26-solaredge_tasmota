@@ -3,7 +3,7 @@
     <title>Dashboard SAE</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="setInterval('window.location.reload()', 120000);">
+<body onload="setInterval('window.location.reload()', 60000);">
 
 
     <h1>cc</h1>
