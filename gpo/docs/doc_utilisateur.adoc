@@ -3,8 +3,7 @@
 == SAE 3.01 DevAPP + 
 {empty} +
 {empty} +
-
-{empty} +
+toc::[]
 {empty} +
 {empty} +
 Pour: RB et EP + 
