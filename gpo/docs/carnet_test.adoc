@@ -4,11 +4,6 @@
 {empty} +
 {empty} +
 
-image::image_rendus/cover_page.png[]
-
-{empty} +
-{empty} +
-{empty} +
 Pour: RB et EP + 
 Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 
