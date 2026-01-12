@@ -27,23 +27,7 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/29 Créer le site| L'utilisateur un conteneur fonctionne | Il va à l'adresse http://127.0.0.1:8080/php/ sur son navigateur | Le site doit afficher des informations dans un tableau |
 
-| supprimer_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur, il est dans le menu tournois et au moins un tournois existe déjà | Il clique sur un tournoi, puis sur le bouton _supprimer_. Un menu apparait et l'utilisateur appuie sur : + 
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/15 Récupérer les informations envoyées par les panneaux solaire | Quand l'utilisateur lance l'application | Il attend patiemment. | Alors le fichier python reçoit régulièrement les informations MQTT | Apparition d'un bug 12/01/2026, qui peut ne pas être le fruit de cette issue, mais elle peut être concernée 
 
- + 
- - *ok* + 
-  +
- - *annuler* + | *ok* 
-Le tournoi est supprimé en conséquence, de la vue de l'utilisateur comme de la base de donnée, même s'il ferme et réouvre l'application.
- + 
- +
- + 
-*annuler* Le menu se referme et le tournoi est conservé. **OK** |  
 
-| consulter_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur | Depuis le menu principal ou depuis n'importe quel autre menu, l'utilisateur clique sur le bouton _tournois_ dans le menu, puis sur _gestion des tournois_. + 
- + 
- +
- S'il clique sur un des tournois, il a accès au différentes personnes du staff du tournois. | L'utilisateur a accès à l'ensemble des tournois et il peut consulter leur nom. + 
-  + 
-  +
-En cliquant sur un des tournois, l'utilisateur voit apparaitre à sa droite la liste des staffs affectés au tournoi. **OK** | 
 |===
