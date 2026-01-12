@@ -31,7 +31,7 @@ Ces tests ont été réalisés sous Windows 10, avec Visual Studio Code et un JD
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/11 Créer image Docker | l'utilisateur à l'image .tar | Il construit et execute l'image dans un conteneur | l'image doit se lancer avec les services fonctionnels, on doit pouvoir accéder à la page web à l'addresse http://127.0.0.1:8080/php/ |
 
-| modifier_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur, il est dans le menu tournois et au moins un tournois existe déjà | Il clique sur un tournoi, puis sur le bouton _modifier_. Un menu apparait et l'utilisateur le remplis en respectant les mêmes conditions que pour la création d'un tournois, c'est à dire qu'il ne laisse aucun champs vide, le prix pool est supérieur ou égal à zéro et la date de début du tournois est supérieure à la date de fin | Le tournoi est modifié en conséquence et lorsque l'on clique de nouveau sur modifier (même en fermant l'application) les changements sont été conservés. **OK** |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/29 Créer le site| L'utilisateur un conteneur fonctionne | Il va à l'adresse http://127.0.0.1:8080/php/ sur son navigateur | Le site doit afficher des informations dans un tableau |
 
 | supprimer_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur, il est dans le menu tournois et au moins un tournois existe déjà | Il clique sur un tournoi, puis sur le bouton _supprimer_. Un menu apparait et l'utilisateur appuie sur : + 
 
