@@ -24,6 +24,7 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 Pour pouvoir lancer l'application il faut se rendre dans le même répertoire que le ```Dockerfile```
 Et entrer les commandes suivantes : 
 ```sudo docker build -t release-sprint:latest .```
+
 ```sudo docker run -d -p 8080:80 --name release release-sprint:latest```
 
 Pour accéder à l'interface web, allez sur votre navigateur et allez à l'adresse : http://127.0.0.1:8080/php/
