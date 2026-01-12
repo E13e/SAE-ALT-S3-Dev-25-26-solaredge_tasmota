@@ -2,15 +2,14 @@
 
 == SAE 3.01 DevAPP + 
 {empty} +
-{empty} +
-toc::[]
-{empty} +
-{empty} +
+
 Pour: RB et EP + 
 Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 
-:toc-title: Table des matières
-:toc:
+:toc:  left
+:toc-title:  Sommaire
+:toclevels: 3
+:sectnums:
 
 = Présentation du projet
 L’objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d’électricité et la consommation.
