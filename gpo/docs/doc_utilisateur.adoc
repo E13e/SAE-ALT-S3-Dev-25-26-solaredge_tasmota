@@ -12,16 +12,16 @@ image::images/solaredge2.jpg[image solaredge panneaux solaires]
 {empty} +
 {empty} +
 {empty} +
+
 =======
+
 Pour: RB et EP + 
 Du groupe 3A :  RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 
 == Présentation du projet
 
-L'objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d'électricité et[...]
-
+L'objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d'électricité et[...
 On doit aussi être notifié via les différents systèmes lorsque les capteurs voient un dépassement des seuils de consommation énergétique. 
-
 Le but est donc de prévenir ce cas dans les salles afin que les personnes présentes agissent pour calmer la situation.  
 
 == L'environnement
