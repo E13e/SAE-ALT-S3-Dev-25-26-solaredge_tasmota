@@ -1,8 +1,6 @@
 = SAÉ 3.A.01 Devapp Alternants
-:toc:  left
-:toc-title:  Sommaire
-:toclevels: 3
-:sectnums:
+:toc: 
+
 
 == Introduction
 
