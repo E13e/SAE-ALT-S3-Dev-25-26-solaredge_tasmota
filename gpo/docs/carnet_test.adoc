@@ -20,8 +20,7 @@ Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 = L'environnement
  
 A CHANGER
-Pour faire tourner l'application, il est nécessaire d'avoir Java 17 (minimum) d'installé, ainsi que d'une connexion internet pour accéder à la base de donnée.
-Ces tests ont été réalisés sous Windows 10, avec Visual Studio Code et un JDK 21. Les données préexistantes sont disponibles sur la Base de Données et les utilisateurs préinscrits sont disponible dans Partie_DEV/code/V0/basededonnee/utilisateursDeLaBD.txt.
+Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 = Fiche de tests commentée 
 
