@@ -1,8 +1,8 @@
 = Documentation Utilisateur
-: toc:  left
-:toc-title:  Sommaire
-:toclevels: 3
-:sectnums:
+: toc: left
+:toc-title: Sommaire
+: toclevels: 3
+: sectnums:
 
 == SAE 3.01 DevAPP
 
