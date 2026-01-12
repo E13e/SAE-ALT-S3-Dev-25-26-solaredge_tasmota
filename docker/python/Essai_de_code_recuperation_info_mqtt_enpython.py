@@ -1,4 +1,5 @@
 import paho.mqtt.client as mqtt
+import ssl
 import json
 
 # config
@@ -16,13 +17,13 @@ def get_data(mqttc, obj, msg):
     test = json.dumps(jsonMsg, indent=2, ensure_ascii=False) 
     print(test)
 
-    with open('./pageweb.php', 'w') as fichier:
-        fichier.write(#génération page php)
+    with open('./pageweb.json', 'w') as fichier:
+        fichier.write(test)
 
 mqttc = mqtt.Client()
 mqttc.username_pw_set(username, pwd)
-mqttc.tls_set()
-print("on se connecte");
+mqttc.tls_set(certfile=None, keyfile=None, cert_reqs=ssl.CERT_NONE, tls_version=ssl.PROTOCOL_TLS, ciphers=None)
+print("on se connecte")
 mqttc.connect(mqttServer, port=8883, keepalive=60)
 
 mqttc.on_message = get_data
