@@ -1,6 +1,6 @@
 = Documentation Utilisateur
 : toc: left
-:toc-title: Sommaire
+: toc-title: Sommaire
 : toclevels: 3
 : sectnums:
 
