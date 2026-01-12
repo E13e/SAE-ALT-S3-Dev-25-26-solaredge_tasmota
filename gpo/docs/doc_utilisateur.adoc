@@ -10,6 +10,7 @@ Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 :toc-title:  Sommaire
 :toclevels: 3
 :sectnums:
+toc::[]
 
 = Présentation du projet
 L’objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d’électricité et la consommation.
@@ -20,7 +21,7 @@ Le but est donc de prévenir ce cas dans les salles afins que les personnes pré
 
 Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
-== 1. Lancer l'application
+== Lancer l'application
 
 Pour pouvoir lancer l'application il faut se rendre dans le même répertoire que le ```Dockerfile```
 Et entrer les commandes suivantes : 
@@ -31,6 +32,6 @@ sudo docker build -t release-sprint:latest .
 ```
 sudo docker run -d -p 8080:80 --name release release-sprint:latest
 ```
-== 2. Accéder à l'interface web
+== Accéder à l'interface web
 
 Pour accéder à l'interface web, allez sur votre navigateur et allez à l'adresse : http://127.0.0.1:8080/php/
