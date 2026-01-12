@@ -3,13 +3,16 @@
     <title>Dashboard SAE</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="setInterval('window.location.reload()', 120000);">
+
 
     <h1>cc</h1>
 
     <?php 
-        $fichier = "/var/www/json/test.json";
+        $fichier = "/var/www/json/pageweb.json";
         
+
+
         if (file_exists($fichier)) {
             $handler = fopen($fichier,"r");
             $donnees = fread($handler, filesize($fichier));
@@ -18,7 +21,11 @@
             
             $donneesJson= json_decode($donnees, true);
         } else {
-            echo "Fichier non trouvé.";
+            $fichier = "../json/pageweb.json";
+
+            $handler = fopen($fichier,"r");
+            $donnees = fread($handler, filesize($fichier));
+            $donneesJson = json_decode($donnees, true);
         }
     ?>
 

@@ -17,7 +17,7 @@ def get_data(mqttc, obj, msg):
     test = json.dumps(jsonMsg, indent=2, ensure_ascii=False) 
     print(test)
 
-    with open('./pageweb.json', 'w') as fichier:
+    with open('./json/pageweb.json', 'w+') as fichier:
         fichier.write(test)
 
 mqttc = mqtt.Client()
