@@ -29,7 +29,7 @@ Ces tests ont été réalisés sous Windows 10, avec Visual Studio Code et un JD
 
 | ID | Given (Quand...) | When (L'utilisateur fait...) | Then (Alors il se passe...)(résultats) | Commentaires
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/11 | l'utilisateur est connecté en tant qu'organisateur ou administrateur et il est dans le menu tournois | Il clique sur le bouton _nouveau_, puis il remplit le formulaire en ne laissant aucune case vide, en entrant une date de début inférieure à une date de fin et en veillant à ce que le prix pool soit supérieur ou égal à zéro | Le nouveau tournoi apparait dans la liste des tournois et est cliquable. **OK** |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/11 Créer image Docker | l'utilisateur à l'image .tar | Il construit et execute l'image dans un conteneur | l'image doit se lancer avec les services fonctionnels, on doit pouvoir accéder à la page web à l'addresse http://127.0.0.1:8080/php/ |
 
 | modifier_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur, il est dans le menu tournois et au moins un tournois existe déjà | Il clique sur un tournoi, puis sur le bouton _modifier_. Un menu apparait et l'utilisateur le remplis en respectant les mêmes conditions que pour la création d'un tournois, c'est à dire qu'il ne laisse aucun champs vide, le prix pool est supérieur ou égal à zéro et la date de début du tournois est supérieure à la date de fin | Le tournoi est modifié en conséquence et lorsque l'on clique de nouveau sur modifier (même en fermant l'application) les changements sont été conservés. **OK** |
 
