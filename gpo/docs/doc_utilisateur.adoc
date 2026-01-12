@@ -13,7 +13,10 @@ Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 :toc-title: Table des matières
 :toc:
 
-= Présentation du projet 
+= Présentation du projet
+L’objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d’électricité et la consommation.
+On doit aussi être notifié via les différents systèmes lorsque les capteurs voient un dépassement des seuils de consommation énergétique.
+Le but est donc de prévenir ce cas dans les salles afins que les personnes présentent agissent pour calmer la situation. 
 
 = L'environnement
 
@@ -30,5 +33,6 @@ sudo docker build -t release-sprint:latest .
 ```
 sudo docker run -d -p 8080:80 --name release release-sprint:latest
 ```
+== 2. Accéder à l'interface web
 
 Pour accéder à l'interface web, allez sur votre navigateur et allez à l'adresse : http://127.0.0.1:8080/php/
