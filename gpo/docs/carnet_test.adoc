@@ -1,1 +1,55 @@
-init tests
+= Cahier de test  
+
+== SAE 3.01 DevAPP + 
+{empty} +
+{empty} +
+
+image::image_rendus/cover_page.png[]
+
+{empty} +
+{empty} +
+{empty} +
+Pour: RB et EP + 
+Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
+
+:toc-title: Table des matières
+:toc:
+
+= Présentation du projet 
+
+= L'environnement
+ 
+A CHANGER
+Pour faire tourner l'application, il est nécessaire d'avoir Java 17 (minimum) d'installé, ainsi que d'une connexion internet pour accéder à la base de donnée.
+Ces tests ont été réalisés sous Windows 10, avec Visual Studio Code et un JDK 21. Les données préexistantes sont disponibles sur la Base de Données et les utilisateurs préinscrits sont disponible dans Partie_DEV/code/V0/basededonnee/utilisateursDeLaBD.txt.
+
+= Fiche de tests commentée 
+
+|===
+
+| ID | Given (Quand...) | When (L'utilisateur fait...) | Then (Alors il se passe...)(résultats) | Commentaires
+
+| creation_tournois | l'utilisateur est connecté en tant qu'organisateur ou administrateur et il est dans le menu tournois | Il clique sur le bouton _nouveau_, puis il remplit le formulaire en ne laissant aucune case vide, en entrant une date de début inférieure à une date de fin et en veillant à ce que le prix pool soit supérieur ou égal à zéro | Le nouveau tournoi apparait dans la liste des tournois et est cliquable. **OK** |
+
+| modifier_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur, il est dans le menu tournois et au moins un tournois existe déjà | Il clique sur un tournoi, puis sur le bouton _modifier_. Un menu apparait et l'utilisateur le remplis en respectant les mêmes conditions que pour la création d'un tournois, c'est à dire qu'il ne laisse aucun champs vide, le prix pool est supérieur ou égal à zéro et la date de début du tournois est supérieure à la date de fin | Le tournoi est modifié en conséquence et lorsque l'on clique de nouveau sur modifier (même en fermant l'application) les changements sont été conservés. **OK** |
+
+| supprimer_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur, il est dans le menu tournois et au moins un tournois existe déjà | Il clique sur un tournoi, puis sur le bouton _supprimer_. Un menu apparait et l'utilisateur appuie sur : + 
+
+ + 
+ - *ok* + 
+  +
+ - *annuler* + | *ok* 
+Le tournoi est supprimé en conséquence, de la vue de l'utilisateur comme de la base de donnée, même s'il ferme et réouvre l'application.
+ + 
+ +
+ + 
+*annuler* Le menu se referme et le tournoi est conservé. **OK** |  
+
+| consulter_tournois | L'utilisateur est connecté en tant qu'organisateur ou administrateur | Depuis le menu principal ou depuis n'importe quel autre menu, l'utilisateur clique sur le bouton _tournois_ dans le menu, puis sur _gestion des tournois_. + 
+ + 
+ +
+ S'il clique sur un des tournois, il a accès au différentes personnes du staff du tournois. | L'utilisateur a accès à l'ensemble des tournois et il peut consulter leur nom. + 
+  + 
+  +
+En cliquant sur un des tournois, l'utilisateur voit apparaitre à sa droite la liste des staffs affectés au tournoi. **OK** | 
+|===
