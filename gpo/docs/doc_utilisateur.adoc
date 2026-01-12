@@ -28,7 +28,7 @@ Le but est donc de prévenir ce cas dans les salles afin que les personnes prés
 
 Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
-=== Lancer l'application
+== Lancer l'application
 
 Pour pouvoir lancer l'application il faut se rendre dans le même répertoire que le `Dockerfile`
 Et entrer les commandes suivantes : 
@@ -43,6 +43,6 @@ sudo docker build -t release-sprint:latest .
 sudo docker run -d -p 8080:80 --name release release-sprint:latest
 ----
 
-=== Accéder à l'interface web
+== Accéder à l'interface web
 
 Pour accéder à l'interface web, allez sur votre navigateur et allez à l'adresse : http://127.0.0.1:8080/php/
