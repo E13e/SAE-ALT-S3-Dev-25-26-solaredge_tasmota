@@ -1,2 +1,2 @@
-sudo docker build -t test-release:latest .
-sudo docker run -d -p 8080:80 --name test test-release:latest
+sudo docker build -t application_solaredge:latest .
+sudo docker run -d -p 8080:80 --name test application_solaredge:latest

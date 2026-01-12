@@ -1,1 +1,600 @@
-init doc util
+= Documentation utilisateur
+v2 - 15/06/2025
+
+== SAE 2.01 : Développement d'une application + 
+{empty} +
+{empty} +
+
+image::image_rendus/cover_page.png[]
+
+{empty} +
+{empty} +
+{empty} +
+Pour: AP, CGIT et YF + 
+Du groupe 1B2 : FERREIRA Ewen, RIGOUSTE Maxime et LARROUTIS Guillaume
+
+:toc-title: Table des matières
+:toc:
+
+= Présentation générale, rôle de l'application
+
+== Présentation
+
+Cette *application* est développée par *Pixel Rift* et permet de gérer des *tournois Esport*. Elle est développée avec *l'idée* de pouvoir proposer un *système de gestion* de tournoi directement pour les *jeux des consoles* de l'entreprise, mais l'application est *flexible* et permet d'être utilisée par *n'importe* quel type d'Esport. 
+
+== Rôle
+
+Ainsi, *l'application* permet notamment de pouvoir *créer plusieurs tournois* à la fois, sur des *jeux différents* et avec des *équipes différentes* constituées de *joueurs uniques*. Elle propose également une *gestion simple* des tournois grâce à la possibilité de *créer un staff*, avec des admins etc...
+
+= Installation utilisation
+
+Tout d'abord, munissez-vous du fichier compressé "GestionTournoiV2.rar" que nous vous avons envoyé et décompressez le ("Extraire ici") à l'aide du logiciel de compression/décompression préféré, comme WinRAR.
+
+image::image_rendus/screen_pour_doc_util/install_1.png[]
+
+Vous obtenez alors la situation suivante :
+
+image::image_rendus/screen_pour_doc_util/install_2.png[]
+
+Il ne reste plus qu'à ouvrir le fichier décompressé, puis double-cliquez sur le jar exécutable qui devrait apparaitre comme cela :
+
+image::image_rendus/screen_pour_doc_util/install_3.png[]
+
+L'application devrait maintenant s'ouvrir et être prête à l'utilisation.
+
+_En cas de problème contacter un technicien._
+
+= Fonctionnement
+
+Vous pouvez gérer les joueurs en les consultants, en ajoutant des joueurs,
+en les modifiants ou en les supprimants.
+
+== Jeux
+
+=== Ouvrir le menu jeu (Ewen Ferreira)
+Pour ouvrir le menu jeux vous devez partir de la page principale du logiciel, pour cela vous devez être connecté soit en administrateur, soit en organisateur.
+
+image::image_rendus/screen_pour_doc_util/section_menu_jeux.png[600, 400]
+
+Pour ouvrir le menu jeux cliquez sur l'onglet "Tournois" dans la barre du menu, puis sur "gestion des jeux".
+
+Les prochaines étapes concernant les jeux se passeront toute à partir d'ici.
+
+image::image_rendus/screen_pour_doc_util/menu_jeux.png[600, 400]
+
+=== Création d'un jeu (Ewen Ferreira)
+
+*Attetion* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+Pour créer un jeux, cliquer sur "Nouveau", une pop-up va apparaître, remplissez le formulaire en veillant à ce que les
+champs avec un _*_ ne soit pas vide.
+
+image::image_rendus/screen_pour_doc_util/creation_jeux_vide.png[600, 400]
+
+voici un exemple d'un rendu conforme (la description n'est pas obligatoire) :
+
+image::image_rendus/screen_pour_doc_util/creation_jeux_plein.png[600, 400]
+
+Une fois sûr de votre choix vous pouvez cliquer sur le bouton _Enregistrer_ pour ajouter le jeu ou _annuler_ pour ne rien changer.
+
+image::image_rendus/screen_pour_doc_util/liste_jeux_actualiser.png[600, 400]
+
+Félicitation votre jeux apparaît.
+
+_En cas de problème contacter un technicien._
+
+=== Modification d'un jeu (Ewen Ferreira)
+
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+
+Pour modifier un jeux sélectionner le jeux que vous souhaitez modifié. Puis cliquer sur Modifier.
+
+image::image_rendus/screen_pour_doc_util/jeux_selectionner.png[600, 400]
+
+L'onglet de création de jeux s'ouvre avec les informations du jeu sélectionné pré-remplis. Modifier les informations
+que vous souhaitez changer.
+
+image::image_rendus/screen_pour_doc_util/creation_jeux_plein.png[600, 400]
+
+Voici des modifications réaliser sur le jeu sélectionner :
+
+image::image_rendus/screen_pour_doc_util/jeux_modifier.png[600, 400]
+
+Une fois sûr de votre choix vous pouvez cliquer sur le bouton _Enregistrer_ pour modifier le jeu ou _annuler_ pour ne rien changer.
+
+image::image_rendus/screen_pour_doc_util/modification_actualiser.png[600, 400]
+
+Votre jeu apparaîtra modifier.
+
+_En cas de problème contacter un technicien._
+
+
+=== Suppression d'un jeu (Ewen Ferreira)
+
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+Pour supprimer un jeu sélectionner le jeu que vous souhaitez supprimer. Puis cliquer sur supprimer.
+
+image::image_rendus/screen_pour_doc_util/modification_actualiser.png[600, 400]
+
+Une pop-up s'ouvrira pour valider votre actions :
+
+image::image_rendus/screen_pour_doc_util/confirmation_suppression.png[600, 400]
+
+si vous voulez faire machine arrière et ne pas supprimer le jeu appuyer sur le bouton _Annuler_.
+Sinon, appuyer sur _OK_.
+
+image::image_rendus/screen_pour_doc_util/jeux_supprimer.png[600, 400]
+
+votre jeu a été supprimé.
+
+_En cas de problème contacter un technicien._
+
+== Equipes
+
+=== Ouvrir le menu équipe
+
+Pour ouvrir le menu des équipes, vous devez partir de la page principale du logiciel. Pour cela vous devez être connecté soit en administrateur, soit en organisateur.
+
+image::image_rendus/screen_pour_doc_util/selection_menu_equipe.png[600, 400]
+
+Pour ouvrir le menu jeux cliquez sur l’onglet "Tournois" dans la barre du menu, puis sur "gestion des jeux".
+
+Les prochaines étapes concernant les jeux se passeront toute à partir d’ici.
+
+image::image_rendus/screen_pour_doc_util/menu_equipe.png[600, 400]
+
+=== Création d'une équipe (Maxime Rigouste)
+
+*Attetion* il est très important d’être connecté au préalable que ce soit en administrateur ou en organisateur. Nous sommes ici connecté en administrateur.
+
+Pour créer une équipe, cliquer sur "Nouveau", une pop-up va apparaître, remplissez le formulaire en veillant à ce que les champs avec un * ne soit pas vide.
+
+image::image_rendus/screen_pour_doc_util/creation_equipe_vide.png[600, 400]
+
+Voici un exemple d’un rendu conforme :
+
+image::image_rendus/screen_pour_doc_util/creation_equipe_plein.png[600, 400]
+
+Une fois sûr de votre choix vous pouvez cliquer sur le bouton Enregistrer pour ajouter l'équipe ou annuler pour ne rien changer.
+
+image::image_rendus/screen_pour_doc_util/liste_equipe_actualiser.png[600, 400]
+
+Félicitation votre équipe apparaît.
+
+En cas de problème contacter un technicien.
+
+=== Modification d'une équipe (Maxime Rigouste)
+
+*Attention* il est très important d’être connecté au préalable que ce soit en administrateur ou en organisateur. Nous sommes ici connecté en administrateur.
+
+Pour modifier une équipe, sélectionner le jeux que vous souhaitez modifier. Puis cliquer sur Modifier.
+
+image::image_rendus/screen_pour_doc_util/equipe_selectionner.png[600, 400]
+
+L’onglet de création d'équipe s’ouvre avec les informations du jeu sélectionné pré-remplis. Modifier les informations que vous souhaitez changer.
+
+image::image_rendus/screen_pour_doc_util/creation_equipe_plein.png[600, 400]
+
+Voici des modifications réaliser sur l'équipe sélectionnée :
+
+image::image_rendus/screen_pour_doc_util/equipe_modifier.png[600, 400]
+
+Une fois sûr de votre choix vous pouvez cliquer sur le bouton Enregistrer pour modifier l'équipe ou annuler pour ne rien changer.
+
+image::image_rendus/screen_pour_doc_util/equipe_modif_actualiser.png[600, 400]
+
+Votre équipe apparaîtra modifiée.
+
+En cas de problème contacter un technicien.
+
+=== Suppression d'une équipe (Maxime Rigouste)
+
+*Attention* il est très important d’être connecté au préalable que ce soit en administrateur ou en organisateur. Nous sommes ici connecté en administrateur.
+
+Pour supprimer équipe, sélectionner celle que vous souhaitez supprimer. Puis cliquer sur supprimer.
+
+image::image_rendus/screen_pour_doc_util/equipe_modif_actualiser.png[600, 400]
+
+Une pop-up s’ouvrira pour valider votre actions :
+
+image::image_rendus/screen_pour_doc_util/equipe_confirmation_supprimer.png[600, 400]
+
+Si vous voulez faire machine arrière et ne pas supprimer l'équipe, appuyer sur le bouton Annuler. Sinon, appuyer sur OK.
+
+image::image_rendus/screen_pour_doc_util/menu_equipe.png[600, 400]
+
+Votre équipe a été supprimée.
+
+En cas de problème contacter un technicien.
+
+=== Affecter un joueur à une équipe (Maxime Rigouste)
+
+Pour affecter un joueur à une équipe, il faut tout d'abord ouvrir l'éditeur de joueur (voir link:doc_utilisateur_V1.adoc#_modification_de_joueurs[Modifier un joueur - documentation utilisateur]). Ensuite sélectionnez le menu déroulant, puis l'équipe souhaitée.
+
+image::image_rendus/screen_pour_doc_util/affecter_equipe.png[600, 400]
+
+
+== Joueurs
+
+=== Création de joueurs (Larroutis Guillaume)
+
+Pour créer un nouvel joueur, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour créer un joueur, il est est nécessaire de se rendre sur le menu des joueurs. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des joueurs".
+
+image::image_rendus/screen_pour_doc_util/section_menu_joueur.png[600, 400]
+
+Vous voici dans le menu des joueurs.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur.png[600, 400]
+
+Pour ajouter un joueur, cliquer sur "Ajouter", un pop-up va apparaitre. Remplissez le formulaire en veillant à ce que les
+champs avec un _*_ ne soit pas vide.
+
+image::image_rendus/screen_pour_doc_util/interface_creation_vide.png[600, 400]
+
+Voici un exemple de complétion correcte, attention l'adresse email n'est pas obligatoire, il s'agit ici d'un exemple.
+Si vous êtes sûr d'avoir bien remplis de votre formulaire, cliquer sur le bouton _Enregistrer_.
+
+image::image_rendus/screen_pour_doc_util/interface_creation_remplie.png[600, 400]
+
+Le nouvel utilisateur est maintenant créer, il est apparu dans le menu des joueurs.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur_avec_nouvel_utilisateur.png[600, 400] 
+
+Attention une mauvaise complétion du formulaire de création peut entrainer une erreur. Lorsque vous ne remplissez aucun champs l'ensemble des erreurs s'affichent, en voici un exemple :
+
+image::image_rendus/screen_pour_doc_util/interface_creation_mal_rempli.png[600, 400]
+
+_En cas de problème contacter un technicien._
+
+=== Modification de joueurs (Larroutis Guillaume)
+
+Pour modifier un joueur, vous pouvez partir de n'importe quelle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour modifier un joueur, il est est nécessaire de se rendre sur le menu des joueurs. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des joueurs".
+
+image::image_rendus/screen_pour_doc_util/section_menu_joueur.png[600, 400]
+
+Vous voici dans le menu des joueurs.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur.png[600, 400]
+
+Sélectionner le joueur que vous souhaitez modifié. Puis cliquer sur Modifier.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur_avec_utilisateur_selectionner.png[600, 400]
+
+L'onglet de création de joueur s'ouvre avec les informations du joueur sélectionné pré-remplis. Modifier les informations
+que vous souhaitez changer.
+
+image::image_rendus/screen_pour_doc_util/interface_modification_non_modifiée.png[600, 400]
+
+Un exemple de modification possible : nous avons ici changer le pseudo du joueur de "esrevniala" à "AlainVerse" et son rôle
+de "Chef de projet" vers "joueur aguérri". Il est bien entendu possible de modifier tous les autres champs comme la date de
+naissance ou la nationalité par exemple.
+Si vous êtes sûr d'avoir bien remplis de votre formulaire, cliquer sur le bouton _Enregistrer_.
+
+image::image_rendus/screen_pour_doc_util/interface_modification_modifiée.png[600, 400]
+
+Les modifications ont maintenant bien été appliquée, visible depuis la page d'acceuil si vous aviez modifier le nom, le prénom
+ou le pseudo. Pour vous en assurer, vous pouvez toujours cliquer de nouveau sur le bouton _Modifier_ , puis quitter.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur_avec_joueur_modifié.png[600, 400]
+
+
+_En cas de problème contacter un technicien._
+
+
+=== Supprimer un joueur (Larroutis Guillaume)
+
+Pour supprimer un joueur, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour supprimer un joueur, il est est nécessaire de se rendre sur le menu des joueurs. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des joueurs".
+
+image::image_rendus/screen_pour_doc_util/section_menu_joueur.png[600, 400]
+
+Vous voici dans le menu des joueurs.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur.png[600, 400]
+
+Sélectionner le joueur que vous souhaitez supprimer. Puis appuyer sur le bouton _Supprimer_.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur_avec_utilisateur_selectionner.png[600, 400]
+
+Une alerte apparait, si vous voulez faire machine arrière et ne pas supprimer le joueur appuyer sur le bouton _cancel_.
+Sinon, appuyer sur _ok_.
+
+image::image_rendus/screen_pour_doc_util/alterte_confimation_suppression_joueur.png[600, 400]
+
+Vous voici de retour sur la page d'acceuil avec le joueur supprimé, même si vous quitter et revenez sur l'application.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur.png[600, 400]
+
+
+_En cas de problème contacter un technicien._
+
+=== Consulter les joueurs (Guillaume Larroutis)
+
+Pour consulter des joueurs, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour consulter des joueurs, il est est nécessaire de se rendre sur le menu des joueurs. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des joueurs".
+
+image::image_rendus/screen_pour_doc_util/section_menu_joueur.png[600, 400]
+
+Vous voici dans le menu des joueurs. Depuis ici, vous pouvez voir l'ensemble des joueurs sous la forme pseudo - nom -
+prénom.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur.png[600, 400]
+
+Si vous souhaitez plus d'informations sur un joueur, il est possible de cliquer sur un des joueurs, puis sur modifier.
+De là vous pouvez voir toutes les informations d'un joueur. Cliquer sur le bouton _cancel_ pour quitter ce menu.
+
+
+_En cas de problème contacter un technicien._
+
+=== Création des PDF 
+
+==== Création d'un PDF récapitulatif sur un joueur (ou une fiche joueur) (Larroutis Guillaume)
+
+Pour créer un PDF récapitulatif sur un joueur, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en *administrateur* et uniquement en temps que tel.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour créer le PDF joueur, il est est nécessaire de se rendre sur le menu des joueurs. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des joueurs".
+
+image::image_rendus/screen_pour_doc_util/section_menu_joueur.png[600, 400]
+
+Vous voici dans le menu des joueurs. Depuis ici, vous pouvez voir l'ensemble des joueurs sous la forme pseudo - nom -
+prénom.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur.png[600, 400]
+
+Ici, vous appuyez sur le joueur dont vous voulez génerer le PDF. Ici nous prenons le joueur "Flash".
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_joueur_flash_selectionner.png[600, 400]
+
+Puis cliquer sur _Générer PDF_. Le PDF sera créé se trouvera dans au même endroit que l'application.
+Si vous avez des difficultés pour retrouver le PDF, vous pouvez vous rendre dans votre explorateur de fichier et rechercher "fiche_joueur_" suivi
+du pseudo du joueur dont vous avez générer le pdf. + 
+Voici un exemple de génération d'un PDF de joueur avec le joueur Flash.
+
+image::image_rendus/screen_pour_doc_util/exemple_PDF_joueur.png[]
+
+_En cas de problème contacter un technicien._
+
+==== Création d'un PDF de la liste des joueurs(Maxime Rigouste)
+
+Pour créer un PDF de la liste des joueurs, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en *administrateur* et uniquement en temps que tel.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour créer le PDF de la liste des joueurs, il est est nécessaire de se rendre sur le menu des joueurs. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des joueurs".
+
+image::image_rendus/screen_pour_doc_util/section_menu_joueur.png[600, 400]
+
+Vous voici dans le menu des joueurs. Depuis ici, vous pouvez voir l'ensemble des joueurs sous la forme pseudo - nom -
+prénom.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_menu_joueur.png[600, 400]
+
+Ici, cliquer sur _PDF Liste Joueur_ pour génerer le PDF de la liste des joueurs.
+
+image::image_rendus/screen_pour_doc_util/liste_joueur_pdf.png[600, 400]
+
+Le PDF sera créé se trouvera dans au même endroit que l'application.
+Si vous avez des difficultés pour retrouver le PDF, vous pouvez vous rendre dans votre explorateur de fichier et rechercher "liste_joueur".
+
+_En cas de problème contacter un technicien._
+
+==== Création d'un PDF d'un tournoi(Ewen Ferreira)
+
+Pour créer un PDF d'un tournoi, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en *administrateur* et uniquement en temps que tel.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour créer le PDF d'un tournoi, il est nécessaire de se rendre sur le menu des tournoi. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des tournois".
+
+image::image_rendus/screen_pour_doc_util/section_menu_tournois.png[600, 400]
+
+Vous voici dans le menu des tournois. Depuis ici, vous pouvez voir l'ensemble des tournois.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois_cs.png[600, 400]
+
+Ici, cliquer sur un tournoi pour nous ce sera -CS Masters- puis sur _génerer PDF_ pour générer son PDF.
+
+image::image_rendus/screen_pour_doc_util/pdf_tournoi.png[600, 400]
+
+Le PDF sera créé se trouvera dans au même endroit que l'application.
+Si vous avez des difficultés pour retrouver le PDF, vous pouvez vous rendre dans votre explorateur de fichier et rechercher "fiche_tournoi_[Nom du tournoi]".
+
+_En cas de problème contacter un technicien._
+
+== Inscriptions 
+
+=== Inscrire une équipe à un tournoi (Guillaume Larroutis)
+
+Pour inscrire une équipe à un tournoi, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour inscrire une équipe, il est est nécessaire de se rendre sur le menu des Tournois. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des tournois".
+
+image::image_rendus/screen_pour_doc_util/section_menu_tournois.png[600, 400]
+
+Vous voici dans le menu des tournois.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois.png[600, 400]
+
+Pour inscrire une équipe à un tournoi, sélectionner le tournoi dans lequel vous souhaitez inscrire votre équipe et cliquer sur le bouton "Générer les inscriptions".
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois_selectionner.png[600,400]
+
+Vous voici dans le menu des inscriptions pour le Tournois que vous avez sélectionner. Dans notre exemple, nous pouvons voir les équipes inscrites au tournois "CS Masters". +
+A présent, cliquer sur le bouton _Ajouter une inscription_. 
+
+image::image_rendus/screen_pour_doc_util/page_d_accueil_inscription_cs_masters_select.png[600, 400]
+
+Un menu s'ouvre, compléter assiduemment les champs du formulaire en respectant les spécificités de chacuns. C'est à dire que les champs "Equipe", "Date Inscription", "Statut" et "Seed" ne soit pas vide. 
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois_inscription_creation_complete.png[600,400]
+
+Un exemple de mauvaise complétion serait celui-ci.
+
+image::image_rendus/screen_pour_doc_util/page_d_accueil_inscription_ajout_mauvaise_completion.png[600, 400]
+
+Ce qui vous ferais apparaitre l'erreur : 
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_inscription_mauvaise_completion_erreur.png[600, 400]
+
+Si vous avez bien remplis votre formulaire, l'équipe devrait apparaitre dans la liste des équipes inscrites au tournois.
+
+image::image_rendus/screen_pour_doc_util/page_d_accueil_inscription_ajoutee.png[600, 400]
+
+
+_Si vous persister dans votre problème, contacter un technicien._
+
+
+=== Consulter les équipes inscrites à un tournoi (Guillaume Larroutis)
+
+==== Manière n°1 : en allant voir les tournois
+
+Pour consulter une inscription d'une équipe à un tournoi depuis le menu tournois, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour aller voir les équipes inscrites, il est est nécessaire de se rendre sur le menu des Tournois. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des tournois".
+
+image::image_rendus/screen_pour_doc_util/section_menu_tournois.png[600, 400]
+
+Vous voici dans le menu des tournois.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois.png[600, 400]
+
+Pour voir les équipes inscrites à un tournoi,  sélectionner le tournoi que vous souhaitez regarder et cliquer sur le bouton "Générer les inscriptions".
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois_selectionner.png[600,400]
+
+Vous voici dans le menu des inscriptions pour le Tournois que vous avez sélectionner. Dans notre exemple, nous pouvons voir que 3 équipes sont inscrites au tournois "cs masters". +
+
+image::image_rendus/screen_pour_doc_util/page_d_accueil_inscription_cs_masters_select.png[600, 400]
+
+_Si vous persister dans votre problème, contacter un technicien._
+
+==== Manière n°2 : en allant voir les équipes
+
+Pour consulter une inscription d'une équipe à un tournoi depuis le menu Equipe, vous pouvez partir de n'importe qu'elle page.
+*Attention* il est très important d'être connecté au préalable que ce soit en administrateur ou en organisateur.
+Nous sommes ici connecté en administrateur.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil.png[600, 400]
+
+Pour aller voir les équipes inscrites, il est est nécessaire de se rendre sur le menu des Equipe. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des équipes".
+
+image::image_rendus/screen_pour_doc_util/selection_menu_equipe.png[600, 400]
+
+Vous voici dans le menu des équipes.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_equipe.png[600, 400]
+
+Pour voir les tournois dans lequels une équipe est inscrite,  sélectionner l'équipe que vous souhaitez regarder. Sur votre droite apparait tous les tournois auquel l'équipe est inscrite. Dans notre exemple, on peut voir que l'équipe Artic Bears est inscrite à trois tournois actuellement (CS Masters, Pro League et Valorant Open). 
+
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_equipe_select.png[600, 400]
+
+_Si vous persister dans votre problème, contacter un technicien._
+
+=== Modifié une équipe d'un tournoi (Ewen Ferreira)
+
+Pour modifier une équipe, il est est nécessaire de se rendre sur le menu des Tournois. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des tournois".
+
+image::image_rendus/screen_pour_doc_util/section_menu_tournois.png[600, 400]
+
+Vous voici dans le menu des tournois.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois.png[600, 400]
+
+Pour modifier une équipe à un tournoi, sélectionner le tournoi dans lequel vous souhaitez modifier votre équipe et cliquer sur le bouton "Gérer les inscriptions".
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois_selectionner.png[600,400]
+
+Vous voici dans le menu des inscriptions pour le Tournois que vous avez sélectionner. Dans notre exemple, nous pouvons voir les équipes inscrites au tournois "CS Masters". +
+A présent, cliquer sur l'équipe que vous voulez modifier l'équipe choisi ici sera Titan Esports, puis sur le bouton  _modifier les inscriptions_. 
+
+image::image_rendus/screen_pour_doc_util/modifier_tournoi.png[600,400]
+
+Vous voici dans le menu de modification, saisissez les modifications en respectant les conditions de créations et appuyer sur _Valider_ pour enregistrer vos modification ou _Annuler_ pour rien changer.
+
+_Si vous persister dans votre problème, contacter un technicien._
+
+
+
+=== Supprimer une équipe d'un tournoi (Maxime Rigouste)
+
+Pour supprimer une équipe, il est est nécessaire de se rendre sur le menu des Tournois. Pour se faire cliquez sur l'onglet
+"Tournois" dans la barre du menu, puis sur "gestion des tournois".
+
+image::image_rendus/screen_pour_doc_util/section_menu_tournois.png[600, 400]
+
+Vous voici dans le menu des tournois.
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois.png[600, 400]
+
+Pour supprimer une équipe à un tournoi, sélectionner le tournoi dans lequel vous souhaitez supprimer votre équipe et cliquer sur le bouton "Générer les inscriptions".
+
+image::image_rendus/screen_pour_doc_util/page_d_acceuil_tournois_selectionner.png[600,400]
+
+Vous voici dans le menu des inscriptions pour le Tournois que vous avez sélectionner. Dans notre exemple, nous pouvons voir les équipes inscrites au tournois "CS Masters". +
+A présent, cliquer sur l'équipe que vous voulez supprimer, puis sur le bouton  _Supprimer_. 
+
+image::image_rendus/screen_pour_doc_util/suppr_equipe_tournoi.png[600,400]
+
+Maintenant, cliquez sur _OK_ et votre équipe sera supprimée du tournoi.
+
+_Si vous persister dans votre problème, contacter un technicien._
+
+
+= Résultats produits avec jeux d'essai commentés
+
+...
