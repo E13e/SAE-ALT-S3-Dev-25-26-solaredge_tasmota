@@ -7,3 +7,4 @@ services:
     volumes:
       - ./php:/var/www/html
       - ./json:/var/www/json
+      - ./python:/var/www/python
