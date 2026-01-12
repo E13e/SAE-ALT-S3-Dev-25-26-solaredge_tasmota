@@ -4,6 +4,9 @@
 {empty} +
 {empty} +
 
+
+image::images/solaredge2.jpg[image solaredge panneaux solaires]
+
 {empty} +
 {empty} +
 {empty} +

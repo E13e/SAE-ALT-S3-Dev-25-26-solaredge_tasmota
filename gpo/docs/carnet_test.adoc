@@ -4,6 +4,8 @@
 {empty} +
 {empty} +
 
+image::images/solaredge2.jpg[image solaredge panneaux solaires]
+
 Pour: RB et EP + 
 Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 
