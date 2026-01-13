@@ -1,0 +1,21 @@
+{
+  "lastUpdateTime": "2024-10-03 10:05:33",
+  "lifeTimeData": {
+    "energy": 2741105
+  },
+  "lastYearData": {
+    "energy": 2260082
+  },
+  "lastMonthData": {
+    "energy": 21603
+  },
+  "lastDayData": {
+    "energy": 680
+  },
+  "currentPower": {
+    "power": 286.22168
+  },
+  "measuredBy": "INVERTER"
+}
+
+

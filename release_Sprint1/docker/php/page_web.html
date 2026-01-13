@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT : MQTT</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+    <script type="text/javascript">
+        var mqtt;
+        const host = "mqtt.iut-blagnac.fr"; // URL du broker
+        const port = 8883;        // Port du broker
+        const clientId = "client_" + Math.random().toString(36).substr(2, 9); // Identifiant unique du client
+        const username = "student";
+        const password = "client";
+
+        function onFailure(message) {
+            console.log("Échec de connexion à " + host + " : " + message.errorMessage);
+            setTimeout(MQTTconnect, 2000); // Réessayer après 2 secondes
+        }
+
+        function onMessageArrived(msg) {
+            console.log("Message reçu : " + msg.payloadString);
+            document.getElementById("data").textContent = msg.payloadString;
+        }
+
+        function onConnect() {
+            console.log("Connecté à " + host);
+            mqtt.subscribe("app/#"); // S'abonner à tous les topics sous 'app/'
+            document.getElementById("data").textContent = "Connecté à " + host;
+        }
+
+        function onConnectionLost(responseObject) {
+            if (responseObject.errorCode !== 0) {
+                console.log("Déconnexion : " + responseObject.errorMessage);
+                setTimeout(MQTTconnect, 2000); // Reconnexion après déconnexion
+            }
+        }
+
+        function MQTTconnect() {
+            console.log("Connexion à " + host + " sur le port " + port);
+            mqtt = new Paho.MQTT.Client(host, port, clientId);
+
+
+
+
+            mqtt.onMessageArrived = onMessageArrived;
+            mqtt.onConnectionLost = onConnectionLost;
+
+            var options = {
+                timeout: 3,
+                userName: username,
+                password: password,
+                useSSL: true,
+                onSuccess: onConnect,
+                onFailure: onFailure
+            };
+
+            mqtt.connect(options);
+        }
+    </script>
+</head>
+
+<body onload="MQTTconnect()">
+    <h1>Message MQTT</h1>
+    <p id="data">Connexion en cours...</p>
+</body>
+</html>
+
+
