@@ -36,7 +36,10 @@ Groupe 3A2 Sujet 2 : Solardege et consommation électrique
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/17)  |  #10 faire en sorte que les informations du site se mettent à jour sans que l'utilisateur rafraichisse le site  |    |    |  x  |  fait
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/19)  |  #13 afficher une alerte sur le M5 si il y a une surconsommation  |  x  |    |    |  fait
 
+
 === Sprint 2
+
+
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/18)  |  #13 afficher une alerte sur le site si il y a une surconsommation  |    |    |    |
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/20)  |  #13 jouer un son d'alerte sur le site si il y a une surconsommation  |    |    |    |
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22)  |  #9 éteindre la prise si il y a une surconsommation  |  x  |    |    |  en attente
