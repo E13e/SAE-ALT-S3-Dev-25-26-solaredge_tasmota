@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Affichage MQTT direct</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h2>Dernier message MQTT reçu :</h2>
+  <pre id="msg"></pre>
+  <script>
+    const socket = io();
+    socket.on("mqtt_message", msg => {
+      document.getElementById("msg").textContent = 
+        `[${msg.topic}]\n` + JSON.stringify(msg.data, null, 2);
+    });
+  </script>
+</body>
+</html>
