@@ -1,11 +1,11 @@
 FROM php:8.2-apache
 
 RUN apt-get update && apt-get install -y \
+    curl \
     python3 \
     python3-pip \
     supervisor \
-    curl \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && curl -fsSL https://deb.nodesource.com/setup_current.x | bash - \
     && apt-get install -y nodejs \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
