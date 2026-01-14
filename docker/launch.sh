@@ -1,6 +1,7 @@
 #!/bin/bash
 
-rm appsae
+docker kill appsae
+docker rm appsae
 
 echo "Lancement du build de l'image"
 if sudo docker build -t application_solaredge:latest .; then
@@ -16,7 +17,7 @@ if sudo docker run -d -p 8080:80 --name appsae application_solaredge:latest; the
   echo ""
   echo ""
   echo "Conteneur demarre avec succes"
-  echo "Aller a http://127.0.0.1:8080/php/ pour acceder au dashboard"
+  echo "Aller a http://127.0.0.1:8080/ pour acceder au dashboard"
 else
   echo ""
   echo ""
