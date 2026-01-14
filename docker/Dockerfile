@@ -4,10 +4,16 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     supervisor \
+    curl \
+    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --break-system-packages paho-mqtt
+
+RUN npm install -g mqtt
 
 COPY ./php /var/www/html/php
 COPY ./python /var/www/html/python
