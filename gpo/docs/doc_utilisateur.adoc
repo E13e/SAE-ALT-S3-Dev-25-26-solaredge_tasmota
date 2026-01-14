@@ -3,7 +3,7 @@
 
 
 == SAE 3.01 DevAPP
-
+Ce document est un guide destiné à l'utilisateur final pour lui indiquer les prcédures pour faire fonctionner le projet.
 
 image::images/solaredge2.jpg[image solaredge panneaux solaires]
 
