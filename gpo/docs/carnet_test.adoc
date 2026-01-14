@@ -35,5 +35,7 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/15 Récupérer les informations envoyées par les panneaux solaire | Quand l'utilisateur lance l'application | Il attend patiemment. | Alors le fichier python reçoit régulièrement les informations MQTT | Apparition d'un bug 12/01/2026, qui peut ne pas être le fruit de cette issue, mais elle peut être concernée 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/16 inclure les informations récupérées dans le site | Quand l'utilisateur accède à l'interface web | Il regarde le tableau de données | Il voit les informations récupérées. |
 
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/17 faire en sorte que les informations du site se mettent à jour sans que l'utilisateur rafraichisse le site | Quand l'utilisateur a lancé le site. | L'utilisateur trois à quatre minutes. | Le site devrait se régénérer automatiquement quand le programme python reçoit les informations MQTT | 
+
 
 |===
