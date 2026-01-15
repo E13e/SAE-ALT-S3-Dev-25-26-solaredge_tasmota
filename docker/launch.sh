@@ -1,7 +1,21 @@
 #!/bin/bash
 
-docker kill appsae
-docker rm appsae
+echo "Verifications..."
+if docker kill appsae; then
+  echo "Arret de l'image..."
+else
+  echo "ok"
+fi
+
+echo "Verification 1/2"
+
+if docker rm appsae; then
+  echo "Suppression de l'image"
+else
+  echo "ok"
+fi
+
+echo "Verification 2/2"
 
 echo "Lancement du build de l'image"
 if sudo docker build -t application_solaredge:latest .; then

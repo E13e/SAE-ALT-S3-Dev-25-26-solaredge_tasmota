@@ -6,7 +6,8 @@ const path = require("path");
 
 const broker = "mqtts://mqtt.iut-blagnac.fr:8883";
 const options = { username: "student", password: "student" };
-const topic = "energy/solaredge/blagnac/#";
+const topicData = "energy/solaredge/blagnac/#";
+const topicAlert = "sandbox/student/SaeSolaredge/etat/alerte"
 
 const app = express();
 const server = http.createServer(app);
@@ -18,10 +19,16 @@ const mqttClient = mqtt.connect(broker, options);
 
 mqttClient.on("connect", () => {
   console.log("MQTT connecté.");
-  mqttClient.subscribe(topic, (err) => {
+  
+  mqttClient.subscribe(topicData, (err) => {
     if (err) console.error(err.message);
-    else console.log(`Souscription ${topic} réussie`);
+    else console.log(`Abonnement à ${topicData} réussi`);
   });
+  mqttClient.subscribe(topicAlert, (err) => {
+    if (err) console.error(err.message);
+    else console.log(`Abonnement à ${topicAlert} réussi`);
+  });
+
 });
 
 mqttClient.on("message", (receivedTopic, message) => {
