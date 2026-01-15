@@ -16,8 +16,8 @@ Du groupe 3A :  RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 
 == Présentation du projet
 
-L'objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d'électricité et[...
-On doit aussi être notifié via les différents systèmes lorsque les capteurs voient un dépassement des seuils de consommation énergétique. 
+L'objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d'électricité etc...
+Il doit aussi être possible d'être notifié via les différents systèmes lorsque les capteurs voient un dépassement des seuils de consommation énergétique. 
 Le but est donc de prévenir ce cas dans les salles afin que les personnes présentes agissent pour calmer la situation.  
 
 == L'environnement
@@ -26,19 +26,19 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 == Lancer l'application
 
-Pour pouvoir lancer l'application il faut se rendre dans le même répertoire que le `Dockerfile`
-Et entrer les commandes suivantes : 
+Pour pouvoir lancer l'application il faut se rendre dans le même répertoire que le script `launch.sh` et l'exécuter en lançant la commande 
+[source, bash]
+---
+./launch.sh
+---
 
-[source,bash]
-----
-sudo docker build -t release-sprint:latest . 
-----
-
-[source,bash]
-----
-sudo docker run -d -p 8080:80 --name release release-sprint:latest
-----
+Si cela ne fonctionne pas du premier coup. Essayer de lui ajouter les droits d'exécutions, puis de le réexécuter : 
+[source, bash]
+--- 
+chmod u+x launch.sh
+./launch.sh
+---
 
 == Accéder à l'interface web
 
-Pour accéder à l'interface web, allez sur votre navigateur et allez à l'adresse : http://127.0.0.1:8080/php/
+Pour accéder à l'interface web, allez sur votre navigateur et allez à l'adresse : http://127.0.0.1:8080/

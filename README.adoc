@@ -70,7 +70,6 @@ Groupe 3A2 Sujet 2 : Solardege et consommation électrique
 
 Liens pour acceder aux différents documents :
 
-- https://github.com/E13e/SAE.3.A.01-Devapp-Alt/blob/main/gpo/docs/doc_technique.adoc[Documentation Technique]
 - https://github.com/E13e/SAE.3.A.01-Devapp-Alt/blob/main/gpo/docs/doc_utilisateur.adoc[Documentation Utilisateur]
 - https://github.com/E13e/SAE.3.A.01-Devapp-Alt/blob/main/gpo/docs/carnet_test.adoc[Carnet de Tests]
 - https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/tree/main/gpo/reunions/cr[Compte Rendu des réunions]
