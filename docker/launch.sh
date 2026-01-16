@@ -25,17 +25,38 @@ else
   exit 1
 fi
 
-echo "Demarrage du container"
-if sudo docker run -d -p 8080:80 --name appsae application_solaredge:latest; then
-  echo ""
-  echo ""
-  echo ""
-  echo "Conteneur demarre avec succes"
-  echo "Aller a http://127.0.0.1:8080/ pour acceder au dashboard"
+echo ""
+echo ""
+read -p "Demarrer le conatainer en arriere plan ? (y/n) : " input
+
+if [ $input == 'y' ]; then
+  echo "Demarrage du container"
+  if sudo docker run -d -p 8080:80 --name appsae application_solaredge:latest; then
+    echo ""
+    echo ""
+    echo ""
+    echo "Conteneur demarre avec succes"
+    echo "Aller a http://127.0.0.1:8080/ pour acceder au dashboard"
+  else
+    echo ""
+    echo ""
+    echo ""
+    echo "Erreur lors du lancement du conteneur"
+    exit 1
+  fi
 else
-  echo ""
-  echo ""
-  echo ""
-  echo "Erreur lors du lancement du conteneur"
-  exit 1
+echo "Demarrage du container"
+  if sudo docker run -p 8080:80 --name appsae application_solaredge:latest; then
+    echo ""
+    echo ""
+    echo ""
+    echo "Conteneur demarre avec succes"
+    echo "Aller a http://127.0.0.1:8080/ pour acceder au dashboard"
+  else
+    echo ""
+    echo ""
+    echo ""
+    echo "Erreur lors du lancement du conteneur"
+    exit 1
+  fi
 fi
