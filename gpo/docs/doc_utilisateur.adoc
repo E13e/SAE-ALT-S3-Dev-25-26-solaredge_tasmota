@@ -32,7 +32,7 @@ Pour pouvoir lancer l'application il faut se rendre dans le même répertoire qu
 ./launch.sh
 ---
 
-Si cela ne fonctionne pas du premier coup. Essayer de lui ajouter les droits d'exécutions, puis de le réexécuter : 
+Si cela ne fonctionne pas du premier coup. Essayer de lui ajouter les droits d'exécutions, puis de le ré-exécuter : 
 [source, bash]
 --- 
 chmod u+x launch.sh
