@@ -61,13 +61,16 @@
 
                   <script>
                     const socket = io();
+                    
+                    // R
                     socket.on("mqtt_message", msg => {
-                         document.getElementById("msg").textContent = 
+                        document.getElementById("msg").textContent = 
                         `Sur le topic : [${msg.topic}]\n`;
                         var test = JSON.stringify(msg.data, null, 2);
 
                         var split = JSON.parse(test);
                         var date = ``;
+
                         for (let i = 0; i < 19; i++) {
                                 date += split.lastUpdateTime[i];
                         }
