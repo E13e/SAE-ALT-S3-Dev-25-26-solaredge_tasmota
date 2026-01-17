@@ -12,6 +12,8 @@ const topicAlert = "sandbox/student/SaeSolaredge/etat/alerte"
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+const historique = [];
+var indiceHistorique = 0;
 
 app.use(express.static(path.join(__dirname, "web")));
 
@@ -35,6 +37,8 @@ mqttClient.on("message", (receivedTopic, message) => {
   try {
     const data = JSON.parse(message.toString());
     io.emit("mqtt_message", { topic: receivedTopic, data });
+    historique[indiceHistorique+1] = data;
+    indiceHistorique++;
     console.log(`Message reçu et broadcasté: ${receivedTopic}`);
   } catch (e) {
     console.error("Erreur JSON :", e.message);
