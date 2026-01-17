@@ -1,6 +1,6 @@
 # Sprint 1
 
-## Fonctionnalités implementées
+## Fonctionnalités implémentées
 
 Il est possible de lancer le projet docker à l'aide des commandes présentes dans le fichier [cmd_docker.txt](https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/blob/main/cmd_docker.txt) (présent dans le zip). /!\ Ces commandes doivent être entrée dans le répertoire docker /!\. Une fois lancée les données des panneaux solaires sont accessibles via ce lien http://127.0.0.1:8080/php/.
 
