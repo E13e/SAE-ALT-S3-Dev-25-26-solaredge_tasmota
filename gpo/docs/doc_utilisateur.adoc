@@ -32,6 +32,27 @@ Pour pouvoir lancer l'application il faut se rendre dans le même répertoire qu
 ./launch.sh
 ---
 
+Exemple : 
+
+En vous plaçant dans le bon répertoire : 
+
+image::images/screen_terminal_positionnement_repertoire.png[screenshot positionnement répertoire]
+
+Vous pouvez lancer l'application (si cela ne fonctionne pas, essayez l'aide en bas de page) : 
+
+image::images/screen_terminal_lauch.sh_confirmation.png[screenshot terminal lancement de l'application et attente de confirmation]
+
+Le lanceur vous demande si vous souhaitez lancer l'application en background ou en forefround (des logs s'afficheront dans le terminal lors du background), saisissez 'y' ou 'n' : 
+
+image::images/screen_terminal_validation.png[screenshot validation lanchement terminal]
+
+Une fois lancée : rendez-vous à l'adresse http://127.0.0.1:8080/
+
+image::images/screen_firefox_entrer_adresse.png[screenshot entrer l'adresse dans son navigateur]
+
+Les données ne devraient plus tarder à arriver.
+image::images/screen_resultat_navigateur.png[résultat dans le navigateur]
+
 Si cela ne fonctionne pas du premier coup. Essayer de lui ajouter les droits d'exécutions, puis de le réexécuter : 
 [source, bash]
 --- 
