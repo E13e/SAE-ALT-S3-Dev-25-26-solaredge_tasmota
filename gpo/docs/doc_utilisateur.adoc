@@ -51,9 +51,10 @@ Une fois lancée : rendez-vous à l'adresse http://127.0.0.1:8080/
 image::images/screen_firefox_entrer_adresse.png[screenshot entrer l'adresse dans son navigateur]
 
 Les données ne devraient plus tarder à arriver.
+
 image::images/screen_resultat_navigateur.png[résultat dans le navigateur]
 
-Si cela ne fonctionne pas du premier coup. Essayer de lui ajouter les droits d'exécutions, puis de le réexécuter : 
+Si cela ne fonctionne pas du premier coup. Essayer de lui ajouter les droits d'exécutions, puis de le ré-exécuter : 
 [source, bash]
 --- 
 chmod u+x launch.sh
