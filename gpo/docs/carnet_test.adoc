@@ -16,7 +16,7 @@ Du groupe 3A : RATSIMBA Jeremy, DUPONT Alexis et LARROUTIS Guillaume
 
 = Présentation du projet 
 
-*Solaredge et Tasmota* 
+*Solaredge et Tasmota :* 
 L’objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs en direct afin de voir, en temps réel, la production d’électricité etc…​ On doit aussi être notifié via les différents systèmes lorsque les capteurs voient un dépassement des seuils de consommation énergétique. Le but est donc de prévenir ce cas dans les salles afin que les personnes présentes agissent pour calmer la situation.
 
 = L'environnement
@@ -37,6 +37,8 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/16 inclure les informations récupérées dans le site | Quand l'utilisateur accède à l'interface web | Il regarde le tableau de données | Il voit les informations récupérées. |
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/17 faire en sorte que les informations du site se mettent à jour sans que l'utilisateur rafraîchisse le site | Quand l'utilisateur a lancé le site. | L'utilisateur trois à quatre minutes. | Le site devrait se régénérer automatiquement quand le programme python reçoit les informations MQTT | 
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/35 Refactorer le code de la page web sur du Javascript | Quand l'utilisateur lance le site, *non plus avec la release 1*, mais avec les mises à jours du code lors du Sprint 2 | L'utilisateur attend que la page se lance | l'image se lance sans problème et le site tourne sous Javascript | |
 
 
 |===
