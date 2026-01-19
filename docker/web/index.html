@@ -65,23 +65,26 @@
                     
                     // R
                     socket.on("mqtt_message", msg => {
-                        document.getElementById("msg").textContent = 
-                        `Sur le topic : [${msg.topic}]\n`;
-                        var test = JSON.stringify(msg.data, null, 2);
+                        document.getElementById("msg").textContent = `Sur le topic : [${msg.topic}]\n`;
 
-                        var split = JSON.parse(test);
-                        var date = ``;
+                        if (msg.topic == 'energy/solaredge/blagnac/overview') {
+                            var test = JSON.stringify(msg.data, null, 2);
 
-                        for (let i = 0; i < 19; i++) {
+                            var split = JSON.parse(test);
+                            var date = ``;
+
+                            for (let i = 0; i < 19; i++) {
                                 date += split.lastUpdateTime[i];
+                            }
+                        
+                            document.getElementById("td1").textContent = date;
+                            document.getElementById("td2").textContent = Object.values(split.lifeTimeData);
+                            document.getElementById("td3").textContent = Object.values(split.lastYearData);
+                            document.getElementById("td4").textContent = Object.values(split.lastMonthData);
+                            document.getElementById("td5").textContent = Object.values(split.lastDayData);
+                            document.getElementById("td6").textContent = Object.values(split.currentPower);
+                            document.getElementById("td7").textContent = Object.values(split.measuredBy);
                         }
-                        document.getElementById("td1").textContent = date;
-                        document.getElementById("td2").textContent = Object.values(split.lifeTimeData);
-                        document.getElementById("td3").textContent = Object.values(split.lastYearData);
-                        document.getElementById("td4").textContent = Object.values(split.lastMonthData);
-                        document.getElementById("td5").textContent = Object.values(split.lastDayData);
-                        document.getElementById("td6").textContent = Object.values(split.currentPower);
-                        document.getElementById("td7").textContent = Object.values(split.measuredBy);
                     });
                   </script>
                 </center>
