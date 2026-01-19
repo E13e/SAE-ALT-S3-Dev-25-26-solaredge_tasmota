@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo "Verifications..."
+echo "Vérifications..."
 if docker kill appsae; then
   echo "Arret de l'image..."
 else
   echo "ok"
 fi
 
-echo "Verification 1/2"
+echo "Vérification 1/2"
 
 if docker rm appsae; then
   echo "Suppression de l'image"
@@ -21,22 +21,22 @@ echo "Lancement du build de l'image"
 if sudo docker build -t application_solaredge:latest .; then
   echo "Build reussi"
 else
-  echo "Echec du build."
+  echo "Échec du build."
   exit 1
 fi
 
 echo ""
 echo ""
-read -p "Demarrer le conatainer en arriere plan ? (y/n) : " input
+read -p "Démarrer le container en arrière-plan ? (y/n) : " input
 
 if [ $input == 'y' ]; then
-  echo "Demarrage du container"
+  echo "Démarrage du container"
   if sudo docker run -d -p 8080:80 --name appsae application_solaredge:latest; then
     echo ""
     echo ""
     echo ""
-    echo "Conteneur demarre avec succes"
-    echo "Aller a http://127.0.0.1:8080/ pour acceder au dashboard"
+    echo "Conteneur démarre avec succès"
+    echo "Aller à http://127.0.0.1:8080/ pour accéder au dashboard"
   else
     echo ""
     echo ""
@@ -45,12 +45,12 @@ if [ $input == 'y' ]; then
     exit 1
   fi
 else
-echo "Demarrage du container"
+echo "Démarrage du container"
   if sudo docker run -p 8080:80 --name appsae application_solaredge:latest; then
     echo ""
     echo ""
     echo ""
-    echo "Conteneur demarre avec succes"
+    echo "Conteneur démarre avec succès"
     echo "Aller a http://127.0.0.1:8080/ pour acceder au dashboard"
   else
     echo ""
