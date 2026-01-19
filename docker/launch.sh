@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Vérifications..."
-if docker kill appsae; then
+if sudo docker kill appsae; then
   echo "Arret de l'image..."
 else
   echo "ok"
@@ -9,7 +9,7 @@ fi
 
 echo "Vérification 1/2"
 
-if docker rm appsae; then
+if sudo docker rm appsae; then
   echo "Suppression de l'image"
 else
   echo "ok"
