@@ -9,8 +9,8 @@ const path       = require("path");
 const broker = "mqtts://mqtt.iut-blagnac.fr:8883";
 const options = { username: "student", password: "student" };
 const topicData = "energy/solaredge/blagnac/#";
-const topicAlert = "sandbox/student/SaeSolaredge/etat/consommation"
-const topicConso = "energy/triphaso/by-room/B110/data/#"
+const topicAlert = "sandbox/student/SaeSolaredge/etat/consommation";
+const topicConso = "energy/triphaso/by-room/B110/data/#";
 
 // init serveur web et socket pour la comm en direct avec le site
 const app = express();

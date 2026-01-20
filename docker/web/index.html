@@ -24,7 +24,6 @@
       </div>
     </header>
 
-    <body>
       <!-- Conteneur principal -->
       <div class="container-fluid flex-grow-1">
         <div class="column">
@@ -52,7 +51,7 @@
             <H3 id="alerte"></H3>
           </center>
           <div class="row">
-            <div class="col md-6">
+            <div class="col-md-6">
               <table border=2>
                 <tr>
                   <td><b> date et heure du dernier échantillon</b></td>
@@ -87,11 +86,29 @@
                 </tr>
               </table>
             </div>
-            <div class="col md-6">
+            <div class="col-md-6">
               <!-- Graphe puissance instantanée -->
               <canvas id="powerChart" height="120">En attente
                 d'informations...</canvas>
             </div>
+          </div>
+
+          <div class="row" style="padding-top:20px;">
+             <div class="col-md-6" style="padding-top:20px;">
+               <table border="2" class="col-md-5">
+                 <thead>
+                     <tr>
+                       <th>Conso salle B110 (Wh)</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                      <tr>
+                          <td><pre id="consoSalle">en attente d'informations...</pre></td>
+                      </tr>
+                 </tbody>
+               </table>
+             </div> 
+  
           </div>
 
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -119,8 +136,8 @@
                           responsive: true,
                           maintainAspectRatio: false,
                           scales: {
-                            x: { display: true, title: { display: true, text: 'Point' } },
-                            y: { display: true, title: { display: true, text: 'W' } }
+                            x: { display: true, title: { display: true, text: 'Temps' } },
+                            y: { display: true, title: { display: true, text: 'Puissance instantannée générée (W)' } }
                           }
                         }
                       });
@@ -148,6 +165,17 @@
                             document.getElementById("td6").textContent = Object.values(split.currentPower);
                             document.getElementById("td7").textContent = Object.values(split.measuredBy);
                         }
+
+                      if (msg.topic == "energy/triphaso/by-room/B110/data") {
+                          var dataConso = JSON.stringify(msg.data[0], null, 2);
+                          var splitConso = JSON.parse(dataConso);
+                         
+                          document.getElementById("consoSalle").textContent = msg.data[0].sum_positive_active_energy_Wh;
+
+                        console.log(msg.data[0].sum_positive_active_energy_Wh);
+
+
+                      }
 
 
                         if (msg.topic == "sandbox/student/SaeSolaredge/etat/consommation") {
