@@ -60,6 +60,9 @@
                         <tr><td><b> puissance instantannée générée (W)</b></td><td><pre id="td6">En attente d'informations...</pre></td></tr> 
                         <tr><td><b> l’origine de la mesure</b></td><td><pre id="td7">En attente d'informations...</pre></td></tr> 
                  </table>
+
+                      <h3 id="alerte"></h3>
+
               </div>
               <div class="col md-6">
                  <!-- Graphe puissance instantanée -->
@@ -133,6 +136,22 @@
                       powerChart.data.datasets[0].data = data;
                       powerChart.update();
                     });
+
+                      if (msg.topic == "sandbox/student/SaeSolaredge/etat/consommation") {
+
+                            var test = JSON.stringify(msg.data, null, 2);
+                            console.log(test);
+                            if (test.includes("true")){
+                                document.body.style.backgroudColor = "red";
+                                document.getElementById("alerte").textContent = "ALERTE, LA SALLE EST EN SURCONSOMMATION !";
+                                alert("La salle est en surconsommation");
+                            }else {
+                                document.getElementById("alerte").textContent = "";
+                            }
+
+
+
+                        }
 
                   </script>
                             <BR/>
