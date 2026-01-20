@@ -9,7 +9,7 @@ const path       = require("path");
 const broker = "mqtts://mqtt.iut-blagnac.fr:8883";
 const options = { username: "student", password: "student" };
 const topicData = "energy/solaredge/blagnac/#";
-const topicAlert = "sandbox/student/SaeSolaredge/etat/alerte"
+const topicAlert = "sandbox/student/SaeSolaredge/etat/consommation"
 const topicConso = "energy/triphaso/by-room/B110/data/#"
 
 // init serveur web et socket pour la comm en direct avec le site
@@ -17,7 +17,6 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 const historique = [];
-var indiceHistorique = 0;
 
 app.use(express.static(path.join(__dirname, "web")));
 
@@ -54,8 +53,16 @@ mqttClient.on("message", (receivedTopic, message) => {
   try {
     const data = JSON.parse(message.toString());
     io.emit("mqtt_message", { topic: receivedTopic, data });
-    historique[indiceHistorique+1] = data;
-    indiceHistorique++;
+    
+    // historiqeu
+    if (receivedTopic == 'energy/solaredge/blagnac/overview') {
+      var test = JSON.stringify(data, null, 2);
+      var split = JSON.parse(test);
+
+      historique.push(Object.values(split.currentPower)[0]);
+      console.log("VALEURS HISTORIQUE : ", historique);
+      io.emit("historique", historique);
+    }
     console.log(`Message reçu et broadcasté: ${receivedTopic}`);
     console.log(`Message reçu : ${receivedTopic}`);
     console.log(data, "\n")
