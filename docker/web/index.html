@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Affichage MQTT direct</title>
-  <script src="/socket.io/socket.io.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <title>Affichage MQTT direct</title>
+    <script src="/socket.io/socket.io.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Exemple</title>
     <!-- Lien vers le fichier CSS de Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Lien vers le fichier CSS du thème Bootswatch -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
-</head>
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
+  </head>
 
-<!-- partie body -->
-<body class="d-flex flex-column min-vh-100">
+  <!-- partie body -->
+  <body class="d-flex flex-column min-vh-100">
     <header class="bg-primary text-white text-center py-1">
-        <div class="container">
-            <h1> Projet SolarEdge et Tasmota</h1>
-        </div>
+      <div class="container">
+        <h1> Projet SolarEdge et Tasmota</h1>
+      </div>
     </header>
 
-<body>
-<!-- Conteneur principal -->
-<div class="container-fluid flex-grow-1">
-    <div class="column">
+    <body>
+      <!-- Conteneur principal -->
+      <div class="container-fluid flex-grow-1">
+        <div class="column">
 
-
-<!-- Script JavaScript pour ajouter la classe 'active' -->
-<script>
+          <!-- Script JavaScript pour ajouter la classe 'active' -->
+          <script>
   // Récupère l'URL actuelle de la page
   const currentPage = window.location.pathname;
 
@@ -44,31 +45,56 @@
   });
 </script>
 
-        <!-- partie contenu principal -->
-                    <BR/>
-                    <center><h2>Dernier message MQTT reçu :</h2>
-                  <pre id="msg"></pre>
-                    </center>
-        <div class="row">
-              <div class="col md-6">
-                  <table border=2>
-                        <tr><td><b>  date et heure du dernier échantillon</b></td><td><pre id ="td1">En attente d'informations...</pre></td></tr> 
-                        <tr><td><b> énergie générée depuis l’installation de l’onduleur (KW.h)</b></td><td><pre id="td2">En attente d'informations...</pre></td></tr> 
-                        <tr><td><b> énergie générée depuis le début de l’année en cours (KW.h) </b></td><td><pre id="td3">En attente d'informations...</pre></td></tr> 
-                        <tr><td><b> énergie générée depuis le début du moins en cours (kW.h)</b></td><td><pre id="td4">En attente d'informations...</pre></td></tr> 
-                        <tr><td><b> énergie générée depuis le début du jour en cours (kW.h)</b></td><td><pre id="td5">En attente d'informations...</pre></td></tr> 
-                        <tr><td><b> puissance instantannée générée (W)</b></td><td><pre id="td6">En attente d'informations...</pre></td></tr> 
-                        <tr><td><b> l’origine de la mesure</b></td><td><pre id="td7">En attente d'informations...</pre></td></tr> 
-                 </table>
-              </div>
-              <div class="col md-6">
-                 <!-- Graphe puissance instantanée -->
-                 <canvas id="powerChart" height="120">En attente d'informations...</canvas>
-              </div>
-        </div>
+          <!-- partie contenu principal -->
+          <br />
+          <center><h2>Dernier message MQTT reçu :</h2>
+            <pre id="msg"></pre>
+          </center>
+          <div class="row">
+            <div class="col md-6">
+              <table border=2>
+                <tr>
+                  <td><b> date et heure du dernier échantillon</b></td>
+                  <td><pre id="td1">En attente d'informations...</pre></td>
+                </tr>
+                <tr>
+                  <td><b> énergie générée depuis l’installation de l’onduleur (KW.h)</b></td>
+                  <td><pre id="td2">En attente d'informations...</pre></td>
+                </tr>
+                <tr>
+                  <td><b> énergie générée depuis le début de l’année en cours (KW.h) </b></td>
+                  <td><pre id="td3">En attente d'informations...</pre></td>
+                </tr>
+                <tr>
+                  <td><b> énergie générée depuis le début du moins en cours (kW.h)</b></td>
+                  <td><pre id="td4">En attente d'informations...</pre></td>
+                </tr>
+                <tr>
+                  <td><b> énergie générée depuis le début du jour en cours (kW.h)</b></td>
+                  <td><pre id="td5">En attente d'informations...</pre></td>
+                </tr>
+                <tr>
+                  <td><b> puissance instantannée générée (W)</b></td>
+                  <td>
+                    <pre id="td6">En attente d'informations...</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b> l’origine de la mesure</b></td>
+                  <td>
+                    <pre id="td7">En attente d'informations...</pre></td>
+                </tr>
+              </table>
+            </div>
+            <div class="col md-6">
+              <!-- Graphe puissance instantanée -->
+              <canvas id="powerChart" height="120">En attente
+                d'informations...</canvas>
+            </div>
+          </div>
 
-                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                  <script>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script>
                     const socket = io();
 
                     let powerChart = null;
@@ -135,27 +161,27 @@
                     });
 
                   </script>
-                            <BR/>
-                            <BR/>
+          <br />
+          <br />
 
+        </div>
+      </div>
 
-    </div>
-</div>
+      <!-- Pied de page & scripts Bootstrap -->
 
-<!-- Pied de page & scripts Bootstrap -->
+      <footer class="bg-dark text-white text-center py-1 mt-auto">
+        <div class="container">
+          <p class="mb-0">&copy; 2026 SolarEdge et Tasmota. Tous droits
+            réservés.</p>
+        </div>
+      </footer>
 
-<footer class="bg-dark text-white text-center py-1 mt-auto">
-    <div class="container">
-            <p class="mb-0">&copy; 2026 SolarEdge et Tasmota. Tous droits réservés.</p>
-    </div>
-</footer>
+      <!-- Scripts JavaScript de Bootstrap -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Scripts JavaScript de Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-</body>
-</html>
-
+    </body>
+  </html>
