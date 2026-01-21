@@ -14,3 +14,4 @@ services:
       context: ./bot-telegram
       dockerfile: Dockerfile
     depends-on: mosquitto
+    restart: unless-stopped
