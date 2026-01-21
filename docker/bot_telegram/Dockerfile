@@ -1,11 +1,10 @@
 FROM node:20-alpine
 
-WORKDIR /web
+WORKDIR /bot_telegram
 
-RUN npm install mqtt express socket.io
+RUN npm install mqtt express telegraf
 
 COPY ./index.js /bot_telegram/index.js
 COPY . /bot_telegram
 
-EXPOSE 80
 CMD [ "node", "index.js" ]

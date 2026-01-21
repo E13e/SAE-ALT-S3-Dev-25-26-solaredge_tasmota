@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web:
     build:
@@ -11,7 +9,6 @@ services:
 
   bot:
     build:
-      context: ./bot-telegram
+      context: ./bot_telegram
       dockerfile: Dockerfile
-    depends-on: mosquitto
     restart: unless-stopped
