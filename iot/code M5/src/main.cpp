@@ -71,8 +71,8 @@ void loop() {
       M5.Lcd.println("");
       M5.Lcd.setTextSize(1);
       M5.Lcd.println("Attente nouveau message...");
-      mqttClient.beginMessage("penSaeSolaredge/etat/alerte");
-      mqttClient.print("[{\"alerte_terminée\": true}]");
+      mqttClient.beginMessage("sandbox/student/SaeSolaredge/etat/consommation");
+      mqttClient.print("{\"surconsommation\": false}");
       int messageId = mqttClient.endMessage();
       Serial.println("Message envoyé, ID: " + String(messageId));
       delay(20000);
@@ -98,67 +98,71 @@ void loop() {
     M5.Lcd.println("pour arreter");
     return;
   }
-  
-  // Récupérer les nouveaux messages MQTT
-  int messageSize = mqttClient.parseMessage();
-  if (messageSize > 0) {
-    String message = "";
-    while (mqttClient.available()) {
-      message += (char)mqttClient.read();
-    }
-    
-    Serial.println("Message reçu: " + message);
-    
-    // Afficher le message reçu
-    M5.Lcd.clear();
-    M5.Lcd.setTextSize(1);
-    M5.Lcd.setTextColor(WHITE);
-    M5.Lcd.fillScreen(BLACK);
-    M5.Lcd.println("=== Message recu ===");
-    M5.Lcd.println(message);
-    
-    // Extraire l'énergie - PREMIÈRE occurrence (la bonne)
-    int energy = 0;
-    int firstKeyPos = message.indexOf("sum_positive_active_energy_Wh");
 
-    if (firstKeyPos != -1) {
-      int colonPos = message.indexOf(":", firstKeyPos);
-      if (colonPos != -1) {
-        int startPos = colonPos + 1;
-        
-        // Sauter espaces/guillemets
-        while (startPos < message.length() && 
-               (message[startPos] == ' ' || message[startPos] == '"' || message[startPos] == '\n')) {
-          startPos++;
-        }
+    // Récupérer les nouveaux messages MQTT
+    int messageSize = mqttClient.parseMessage();
+    if (messageSize > 0) {
+      String message = "";
+      while (mqttClient.available()) {
+        message += (char)mqttClient.read();
+      }
+      
+      Serial.println("Message reçu: " + message);
+      
+      // Afficher le message reçu
+      M5.Lcd.clear();
+      M5.Lcd.setTextSize(1);
+      M5.Lcd.setTextColor(WHITE);
+      M5.Lcd.fillScreen(BLACK);
+      M5.Lcd.println("=== Message recu ===");
+      M5.Lcd.println(message);
+      
+      // Extraire l'énergie - PREMIÈRE occurrence (la bonne)
+      int energy = 0;
+      int firstKeyPos = message.indexOf("sum_positive_active_energy_Wh");
 
-        int endPos = message.indexOf(",", startPos);
-        if (endPos == -1) endPos = message.indexOf("}", startPos);
-        if (endPos == -1) endPos = message.indexOf("]", startPos);
+      if (firstKeyPos != -1) {
+        int colonPos = message.indexOf(":", firstKeyPos);
+        if (colonPos != -1) {
+          int startPos = colonPos + 1;
+          
+          // Sauter espaces/guillemets
+          while (startPos < message.length() && 
+                (message[startPos] == ' ' || message[startPos] == '"' || message[startPos] == '\n')) {
+            startPos++;
+          }
 
-        if (endPos != -1) {
-          String temp = message.substring(startPos, endPos);
-          temp.trim();
-          energy = temp.toInt();
-          
-          Serial.print("Energie PREMIERE: ");
-          Serial.println(energy);
-          
-          M5.Lcd.setTextSize(2);
-          M5.Lcd.print("Energie: ");
-          M5.Lcd.print(energy);
-          M5.Lcd.println(" Wh");
-          
-          if (energy > 1000) {
-            alerteActive = true;
-            M5.Lcd.setTextSize(3);
-            M5.Lcd.setTextColor(RED);
-            M5.Lcd.println("\nDEPASSEMENT !!!");
+          int endPos = message.indexOf(",", startPos);
+          if (endPos == -1) endPos = message.indexOf("}", startPos);
+          if (endPos == -1) endPos = message.indexOf("]", startPos);
+
+          if (endPos != -1) {
+            String temp = message.substring(startPos, endPos);
+            temp.trim();
+            energy = temp.toInt();
+            
+            Serial.print("Energie PREMIERE: ");
+            Serial.println(energy);
+            
+            M5.Lcd.setTextSize(2);
+            M5.Lcd.print("Energie: ");
+            M5.Lcd.print(energy);
+            M5.Lcd.println(" Wh");
+            
+            if (energy > 1000) {
+              alerteActive = true;
+              M5.Lcd.setTextSize(3);
+              M5.Lcd.setTextColor(RED);
+              M5.Lcd.println("\nDEPASSEMENT !!!");
+              mqttClient.beginMessage("sandbox/student/SaeSolaredge/etat/consommation");
+              mqttClient.print("{\"surconsommation\": true}");
+              int messageId = mqttClient.endMessage();
+              Serial.println("Message envoyé, ID: " + String(messageId));
+            }
           }
         }
+      } else {
+        M5.Lcd.println("Champ energie non trouvé");
       }
-    } else {
-      M5.Lcd.println("Champ energie non trouvé");
     }
-  }
 }
