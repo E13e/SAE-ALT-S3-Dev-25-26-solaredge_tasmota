@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  bot:
+    build:
+      context: ./bot-telegram
+      dockerfile: Dockerfile
+    depends-on: mosquitto

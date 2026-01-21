@@ -1,11 +1,11 @@
 FROM node:20-alpine
 
-WORKDIR /app
+WORKDIR /web
 
 RUN npm install mqtt express socket.io
 
-COPY ./app.js /app/app.js
-COPY ./web /app/web
+COPY ./app.js /web/app.js
+COPY . /web
 
 EXPOSE 80
 CMD [ "node", "app.js" ]
