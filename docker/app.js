@@ -10,6 +10,7 @@ const broker = "mqtts://mqtt.iut-blagnac.fr:8883";
 const options = { username: "student", password: "student" };
 const topicData = "energy/solaredge/blagnac/#";
 const topicAlert = "sandbox/student/SaeSolaredge/etat/consommation";
+const topicSeuil = "sandbox/student/SaeSolaredge/etat/seuil";
 const topicConso = "energy/triphaso/by-room/B110/data/#";
 
 // init serveur web et socket pour la comm en direct avec le site
@@ -20,13 +21,12 @@ const historique = [];
 
 app.use(express.static(path.join(__dirname, "web")));
 
-
 // Connexion au broker et abonnement aux topics
 const mqttClient = mqtt.connect(broker, options);
 
 mqttClient.on("connect", () => {
   console.log("MQTT connecté.");
-  
+
   // Topic panneaux solaire
   mqttClient.subscribe(topicData, (err) => {
     if (err) console.error(err.message);
@@ -43,8 +43,8 @@ mqttClient.on("connect", () => {
   mqttClient.subscribe(topicConso, (err) => {
     if (err) console.error(err.message);
     else console.log(`Abonnement à ${topicConso} réussi`);
-  }); 
-  
+  });
+
 
 });
 
@@ -53,7 +53,7 @@ mqttClient.on("message", (receivedTopic, message) => {
   try {
     const data = JSON.parse(message.toString());
     io.emit("mqtt_message", { topic: receivedTopic, data });
-    
+
     // historiqeu
     if (receivedTopic == 'energy/solaredge/blagnac/overview') {
       var test = JSON.stringify(data, null, 2);
@@ -77,8 +77,20 @@ mqttClient.on("error", (err) => {
   console.error("Erreur MQTT :", err.message);
 });
 
+io.on('connection', (socket) => {
+  socket.on('changement_seuil', (nouveauSeuil) => {
 
-const PORT = 80; 
+    console.log(nouveauSeuil);
+
+    var preparation = { "seuil" : nouveauSeuil };
+    var seuilSousFormeJson = JSON.stringify(preparation);
+
+    mqttClient.publish(topicSeuil, seuilSousFormeJson);
+
+  })
+ 
+});
+const PORT = 80;
 server.listen(PORT, () => {
   console.log(`Serveur HTTP/WebSocket sur http://localhost:${PORT}`);
 });

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Affichage MQTT direct</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="publishMQTT.js"></script>
 
+<head>
+  <meta charset="UTF-8">
+  <title>Affichage MQTT direct</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Exemple</title>
@@ -114,7 +116,6 @@
 
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
           <script>
-                    const socket = io();
 
                     let powerChart = null;
                     function ensureChart(initialData = []) {
@@ -217,14 +218,26 @@
           <br />
           <br />
           <center> 
-           <form>
-              Seuils : <input type="text" value="243" name="seuils" required>
-              <input type='button' onclick='publish' name="valider" value="valider"> 
-
-
-              
+           <form id='form'>
+              Seuils : <input type="text" value="243" id='seuil' name="seuils" required>
+              <input type='submit' id='input' name="valider" value="valider"> 
             </form>
           </center>
+          <script>
+
+              var form = document.getElementById('form');
+              var input = document.getElementById('input');
+              var seuil = document.getElementById('seuil');
+
+
+              form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (seuil.value) {
+                  socket.emit('changement_seuil', seuil.value); 
+                  seuil.value='';
+                }
+              });
+          </script>
 
       </div>
 
