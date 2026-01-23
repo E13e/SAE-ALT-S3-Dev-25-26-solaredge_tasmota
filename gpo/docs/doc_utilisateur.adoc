@@ -64,3 +64,11 @@ chmod u+x launch.sh
 == Accéder à l'interface web
 
 Pour accéder à l'interface web, allez sur votre navigateur et allez à l'adresse : http://127.0.0.1:8080/
+
+== Changer le seuil
+
+Au bas de la page principale se trouve un champs pour changer le seuil de surconsommation de la salle. 
+
+image::images/screenshot_changement_seuil_surconsommation.png[]
+
+Pour changer la valeur, entrer simplement le nouveau seuil (en watt) et cliquer sur "valider".
