@@ -68,7 +68,7 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/37 | Après un état d'alerte et d'un acquittement | l'utilisateur aquitte l'alerte | la prise se rallume après l'acquittement d'une alerte |
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/37 | Au moment d'une alerte | rien | la prise s'eteint au moment de l'alerte de surconsomation |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22 | Au moment d'une alerte | rien | la prise s'eteint au moment de l'alerte de surconsomation |
 
 | | | | |
 |===
