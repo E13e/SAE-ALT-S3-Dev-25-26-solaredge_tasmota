@@ -3,14 +3,13 @@
 #include <ArduinoMqttClient.h>
 #include <M5Stack.h>
 
-const char ssid[] = "Bigger_Nalls";
-const char pass[] = "smash420";
+const char ssid[] = "iPhone";
+const char pass[] = "Alexis32310";
 
 const char broker[] = "mqtt.iut-blagnac.fr";
 int port = 8883;
 const char topic[] = "energy/triphaso/by-room/B110/data";
 const char topicSeuil[] = "sandbox/student/SaeSolaredge/etat/seuil";
-//const char topicEcriture[] = "sandbox/SaeSolaredge/etat";
 const char mqttUser[] = "student";
 const char mqttPass[] = "student";
 int seuil = 10000000;
@@ -20,6 +19,9 @@ MqttClient mqttClient(wifiClient);
 
 unsigned long lastMillis = 0;
 bool alerteActive = false;
+
+unsigned long lastRestart = 0;
+const unsigned long restartInterval = 120000;
 
 void setup() {
   M5.begin();
@@ -61,6 +63,18 @@ void setup() {
 void loop() {
   M5.update();
   
+  // Redémarrer tous les 2 minutes
+  if (millis() - lastRestart > restartInterval) {
+    M5.Lcd.clear();
+    M5.Lcd.fillScreen(BLACK);
+    M5.Lcd.setTextColor(WHITE);
+    M5.Lcd.setTextSize(2);
+    M5.Lcd.setCursor(20, 100);
+    M5.Lcd.println("Redémarrage...");
+    delay(2000);
+    ESP.restart();
+  }
+  
   // Vérifier les appuis sur les boutons TOUJOURS - CORRIGÉ
   if (M5.BtnB.wasPressed() || M5.BtnC.wasPressed()) {
     if (alerteActive) {
@@ -91,11 +105,6 @@ void loop() {
     M5.Lcd.setTextSize(3);
     M5.Lcd.println("ALERTE !");
     M5.Lcd.setTextSize(2);
-    // probleme ca publie en boucle
-    // mqttClient.beginMessage("sandbox/student/SaeSolaredge/etat");
-    // mqttClient.print("[{\"alerte_terminée\": false}]");
-    // int messageId = mqttClient.endMessage();
-    // Serial.println("Message envoyé, ID: " + String(messageId));
     M5.Lcd.println("Forte energie");
     M5.Lcd.println("Appuyez bouton");
     M5.Lcd.println("pour arreter");
@@ -124,9 +133,11 @@ void loop() {
           s.trim();
 
           seuil = s.toInt();
+          Serial.println("Nouveau seuil reçu: " + String(seuil));
       }else {
 
       Serial.println("Message reçu: " + message);
+      Serial.println("Seuil actuel: " + String(seuil));
       
       // Afficher le message reçu
       M5.Lcd.clear();
@@ -163,6 +174,10 @@ void loop() {
             
             Serial.print("Energie PREMIERE: ");
             Serial.println(energy);
+            Serial.print("Comparaison: ");
+            Serial.print(energy);
+            Serial.print(" > ");
+            Serial.println(seuil);
             
             M5.Lcd.setTextSize(2);
             M5.Lcd.print("Energie: ");
@@ -178,6 +193,7 @@ void loop() {
               mqttClient.print("{\"surconsommation\": true}");
               int messageId = mqttClient.endMessage();
               Serial.println("Message envoyé, ID: " + String(messageId));
+              delay(500);  // Laisser le temps à l'affichage de se faire
             }
           }
         }
