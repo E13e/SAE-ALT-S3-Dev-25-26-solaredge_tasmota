@@ -3,15 +3,17 @@
 #include <ArduinoMqttClient.h>
 #include <M5Stack.h>
 
-const char ssid[] = "iPhone";
-const char pass[] = "Alexis32310";
+const char ssid[] = "Bigger_Nalls";
+const char pass[] = "smash420";
 
 const char broker[] = "mqtt.iut-blagnac.fr";
 int port = 8883;
 const char topic[] = "energy/triphaso/by-room/B110/data";
+const char topicSeuil[] = "sandbox/student/SaeSolaredge/etat/seuil";
 //const char topicEcriture[] = "sandbox/SaeSolaredge/etat";
 const char mqttUser[] = "student";
 const char mqttPass[] = "student";
+int seuil = 10000000;
 
 WiFiClientSecure wifiClient;
 MqttClient mqttClient(wifiClient);
@@ -52,6 +54,7 @@ void setup() {
   M5.Lcd.println("OK !");
   
   mqttClient.subscribe(topic);
+  mqttClient.subscribe(topicSeuil);
   M5.Lcd.println("Abonné au topic");
 }
 
@@ -106,7 +109,23 @@ void loop() {
       while (mqttClient.available()) {
         message += (char)mqttClient.read();
       }
-      
+       
+      String s(message);
+
+      if (s.lastIndexOf("seuil") != -1){
+
+          int endroit = s.indexOf(":");
+
+          s = s.substring(endroit, s.length() -1);
+
+          s.trim();
+          s = s.substring(2, s.length() -2);
+
+          s.trim();
+
+          seuil = s.toInt();
+      }else {
+
       Serial.println("Message reçu: " + message);
       
       // Afficher le message reçu
@@ -115,6 +134,7 @@ void loop() {
       M5.Lcd.setTextColor(WHITE);
       M5.Lcd.fillScreen(BLACK);
       M5.Lcd.println("=== Message recu ===");
+      M5.Lcd.println(s.lastIndexOf("seuil"));
       M5.Lcd.println(message);
       
       // Extraire l'énergie - PREMIÈRE occurrence (la bonne)
@@ -149,7 +169,7 @@ void loop() {
             M5.Lcd.print(energy);
             M5.Lcd.println(" Wh");
             
-            if (energy > 1000) {
+            if (energy > seuil) {
               alerteActive = true;
               M5.Lcd.setTextSize(3);
               M5.Lcd.setTextColor(RED);
@@ -165,4 +185,5 @@ void loop() {
         M5.Lcd.println("Champ energie non trouvé");
       }
     }
+  }
 }
