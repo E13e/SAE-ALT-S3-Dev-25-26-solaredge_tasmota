@@ -51,24 +51,23 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/14 Créer le site | Lorsque l'application est lancée. | L'utilisateur entre l'adresse http://127.0.0.1:8080/ . | Une page web s'affiche. | 
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/40 Ajouter la possibilité de modifier le seuil depuis la page web | Lorsque l'application est lancée. | L'utilisateur peut entrer une nouvelle valeur de seuil. |  | Non terminée
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/40 Ajouter la possibilité de modifier le seuil depuis la page web | Lorsque l'application est lancée. | L'utilisateur peut entrer une nouvelle valeur de seuil. |  Le nouveau seuil est enregistré et envoyé au M5 qui le prendra en compte. | 
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/23 | L'application est lancée et se trouve en état de surconsomamtion. |  Un technicien fait le nécessaire et appui sur un des trois boutons du M5 pour acquitter l'alerte. | L'alerte est acquittée. | 
 
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/28 Tester Image | Le développeur lance l'application. |  Il vérifie que la page web s'affiche bien. | La page web s'est affichée correctement. | 
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/24 | Après un état d'alerte et d'un acquittement | l'utilisateur aquitte l'alerte | le M5 revient à son affichage normal. |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/24 rétablir l'affichage normal sur l'écran du M5 | Après un état d'alerte et d'un acquittement | l'utilisateur aquitte l'alerte | le M5 revient à son affichage normal. |
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/19 | Au moment d'une surconsomation | rien | le M5 affiche une alerte |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/19  afficher une alerte sur le M5 si il y a une surconsommation | Au moment d'une surconsomation | rien | le M5 affiche une alerte |
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/19 | Au moment d'une surconsomation | rien | le M5 joue un son d'alerte |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/21 jouer un son d'alerte sur le M5 si il y a une surconsommation  | Au moment d'une surconsomation | rien | le M5 joue un son d'alerte |
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/25 | Après un état d'alerte et au moment d'un acquittement | l'utilisateur aquitte l'alerte | le M5 envoi un message sur un topic mqtt pour prevenir que l'alerte à été acquitté |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/25  Envoyer l'information d'aquittance avec le M5Stack | Après un état d'alerte et au moment d'un acquittement | l'utilisateur aquitte l'alerte | le M5 envoi un message sur un topic mqtt pour prevenir que l'alerte à été acquitté |
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/37 | Après un état d'alerte et d'un acquittement | l'utilisateur aquitte l'alerte | la prise se rallume après l'acquittement d'une alerte |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/37 Rallumer la prise après acquittement | Après un état d'alerte et d'un acquittement | l'utilisateur aquitte l'alerte | la prise se rallume après l'acquittement d'une alerte |
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22 | Au moment d'une alerte | rien | la prise s'eteint au moment de l'alerte de surconsomation |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22 éteindre la prise si il y a une surconsommation | Au moment d'une alerte | rien | la prise s'eteint au moment de l'alerte de surconsomation |
 
-| | | | |
 |===
