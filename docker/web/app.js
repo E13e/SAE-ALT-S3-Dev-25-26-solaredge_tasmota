@@ -17,9 +17,9 @@ const topicConso = "energy/triphaso/by-room/B110/data/#";
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
-const historique = [];
+const historique = {};
 
-app.use(express.static(path.join(__dirname, "web")));
+app.use(express.static(__dirname));
 
 // Connexion au broker et abonnement aux topics
 const mqttClient = mqtt.connect(broker, options);
@@ -59,9 +59,14 @@ mqttClient.on("message", (receivedTopic, message) => {
       var test = JSON.stringify(data, null, 2);
       var split = JSON.parse(test);
 
-      historique.push(Object.values(split.currentPower)[0]);
+      const timestamp = new Date().toISOString(); // ou Date.now() pour un nombre
+      const puissance = Object.values(split.currentPower)[0];
+      
+      historique[timestamp] = puissance;
+      
       console.log("VALEURS HISTORIQUE : ", historique);
       io.emit("historique", historique);
+
     }
     console.log(`Message reçu et broadcasté: ${receivedTopic}`);
     console.log(`Message reçu : ${receivedTopic}`);

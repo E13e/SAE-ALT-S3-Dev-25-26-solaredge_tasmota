@@ -77,7 +77,7 @@
                   <td><pre id="td5">En attente d'informations...</pre></td>
                 </tr>
                 <tr>
-                  <td><b> puissance instantannée générée (W)</b></td>
+                  <td><b> puissance instantanée générée (W)</b></td>
                   <td>
                     <pre id="td6">En attente d'informations...</pre>
                   </td>
@@ -106,7 +106,7 @@
                  </thead>
                  <tbody>
                       <tr>
-                          <td><pre id="consoSalle">en attente d'informations...</pre></td>
+                          <td id="caseConso"><pre id="consoSalle">en attente d'informations...</pre></td>
                       </tr>
                  </tbody>
                </table>
@@ -182,13 +182,13 @@
 
                         if (msg.topic == "sandbox/student/SaeSolaredge/etat/consommation") {
 
-                            var test = JSON.stringify(msg.data, null, 2);
-                            console.log(test);
-                            if (test.includes("true")){
-                                document.body.style.backgroudColor = "red";
+                            var msgAlerte = JSON.stringify(msg.data, null, 2);
+                            console.log(msgAlerte);
+                            if (msgAlerte.includes("true")){
+                                document.getElementById("caseConso").style.backgroundColor = "red";
                                 document.getElementById("alerte").textContent = "ALERTE, LA SALLE EST EN SURCONSOMMATION !";
-                                alert("La salle est en surconsommation");
                             }else {
+                                document.getElementById("caseConso").style.backgroundColor = "white";
                                 document.getElementById("alerte").textContent = "";
                             }
 
@@ -196,7 +196,8 @@
 
                         }
                     });
-
+                    
+                    // Récupération des données précédentes
                     socket.on("historique", data => {
 
                       if (!powerChart) {
