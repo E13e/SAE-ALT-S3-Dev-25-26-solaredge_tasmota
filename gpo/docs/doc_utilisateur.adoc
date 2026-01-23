@@ -26,10 +26,16 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 == Lancer l'application
 
-Pour pouvoir lancer l'application il faut se rendre dans le même répertoire que le script `launch.sh` et l'exécuter en lançant la commande 
+Pour pouvoir lancer l'application il faut se rendre dans le même répertoire que le script `docker-compose.yml` et l'exécuter en lançant la commande 
 [source, bash]
 ---
-./launch.sh
+docker compose up 
+---
+
+Cette commande peut nécessiter les permissions super-utilisateurs : 
+[source, bash]
+---
+sudo docker compose up 
 ---
 
 Exemple : 
@@ -38,13 +44,9 @@ En vous plaçant dans le bon répertoire :
 
 image::images/screen_terminal_positionnement_repertoire.png[screenshot positionnement répertoire]
 
-Vous pouvez lancer l'application (si cela ne fonctionne pas, essayez l'aide en bas de page) : 
+Vous pouvez lancer l'application  : 
 
-image::images/screen_terminal_lauch.sh_confirmation.png[screenshot terminal lancement de l'application et attente de confirmation]
-
-Le lanceur vous demande si vous souhaitez lancer l'application en background ou en forefround (des logs s'afficheront dans le terminal lors du background), saisissez 'y' ou 'n' : 
-
-image::images/screen_terminal_validation.png[screenshot validation lanchement terminal]
+image::images/screen_docker_compose_up.png[]
 
 Une fois lancée : rendez-vous à l'adresse http://127.0.0.1:8080/
 
@@ -54,12 +56,10 @@ Les données ne devraient plus tarder à arriver.
 
 image::images/screen_resultat_navigateur.png[résultat dans le navigateur]
 
-Si cela ne fonctionne pas du premier coup. Essayer de lui ajouter les droits d'exécutions, puis de le ré-exécuter : 
-[source, bash]
---- 
-chmod u+x launch.sh
-./launch.sh
----
+Au bout d'un certains temps d'attente, vous pourriez obtenir un beau graphique commme celui-ci : 
+
+image::images/exemple_de_page_après_une_longue_attente.png[]
+
 
 == Accéder à l'interface web
 
