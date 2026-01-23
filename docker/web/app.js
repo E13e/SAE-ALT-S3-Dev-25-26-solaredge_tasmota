@@ -19,6 +19,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 const historique = {};
 
+
 app.use(express.static(__dirname));
 
 // Connexion au broker et abonnement aux topics
@@ -59,7 +60,7 @@ mqttClient.on("message", (receivedTopic, message) => {
       var test = JSON.stringify(data, null, 2);
       var split = JSON.parse(test);
 
-      const timestamp = new Date().toISOString(); // ou Date.now() pour un nombre
+      const timestamp = new Date().toISOString();
       const puissance = Object.values(split.currentPower)[0];
       
       historique[timestamp] = puissance;
@@ -68,6 +69,17 @@ mqttClient.on("message", (receivedTopic, message) => {
       io.emit("historique", historique);
 
     }
+
+    // date msg mqtt surconsommation
+    if (receivedTopic == topicAlert) {
+      const timestampAlert = new Date().toISOString();
+
+      console.log("dernier changement etat surconso : ", timestampAlert);
+      io.emit("timestampAlert", timestampAlert);
+    }
+
+    
+
     console.log(`Message reçu et broadcasté: ${receivedTopic}`);
     console.log(`Message reçu : ${receivedTopic}`);
     console.log(data, "\n")
