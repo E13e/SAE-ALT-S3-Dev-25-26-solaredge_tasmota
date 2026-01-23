@@ -70,4 +70,8 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22 éteindre la prise si il y a une surconsommation | Au moment d'une alerte | rien | la prise s'eteint au moment de l'alerte de surconsomation |
 
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/39 informer les utilisateurs de l'acquitance de l'alerte | Au moment de l'acquitance de l'alerte | rien | un message est publié sur un canal telegram |
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/32 informer les utilisateurs du status de la prise | au moment ou l'alerte est lancée et au moment de l'acquitance de l'alerte | rien | un message est publié sur un canal telegram |
+
 |===
