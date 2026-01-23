@@ -75,5 +75,5 @@ Pour changer la valeur, entrer simplement le nouveau seuil (en watt) et cliquer 
 
 == Accéder au chanel telegram
 
-Sur ce canal telegram vous serez informé de si il y a une surconsomation, de l'etat de la prise connectée ou encore quand une alerte est acquitée.
+Sur ce canal telegram vous serez informé de si il y a une surconsommation, de l'etat de la prise connectée ou encore quand une alerte est acquitée.
 Vous avez juste à suivre le lien suivant pour rejoindre le canal telegram : https://t.me/+XrylgGrNdcBiYjI0
