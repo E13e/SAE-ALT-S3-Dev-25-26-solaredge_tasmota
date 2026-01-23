@@ -42,12 +42,20 @@ Groupe 3A2 Sujet 2 : Solardege et consommation électrique
 |===
 |  Tâche  |  Nom  |  Alexis  |  Guillaume  |  Jérémy  |  état (en cours, à tester, fait)  
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/18)  |  #13 afficher une alerte sur le site si il y a une surconsommation  |    |  x  |    |  en cours
-|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/20)  |  #13 jouer un son d'alerte sur le site si il y a une surconsommation  |    |    |  x  | en cours
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/22)  |  #9 éteindre la prise si il y a une surconsommation  |  x  |    |    |  fait
 |  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/23)  |  #4 acquitter une alerte en appuyant sur un bouton du M5  |  x  |    |    |  fait
-|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/24)  |  #4 rétablir l'affichage normal sur l'écran du M5  |  x  |    |    |  fait
-|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/25)  |  Envoyer l'information d'aquittance avec le M5Stack  |  x  |    |    |  en cours
-|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/26)  |  Traiter l'information sur le site  |  x  |    |  x  |  fait
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/24)  |  #4 rétablir l'affichage normal sur l'écran du M5  |  x  |    |    | fait
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/25)  |  #5 Envoyer l'information d'aquittance avec le M5Stack  |  x  |    |    |  en cours
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/26)  |  #5 Traiter d'acquittement l'information sur le site  |  x  |    |  x  |  fait
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/36)  |  #10 Ajouter un système d'historique des messages MQTT des panneaux solaires  |   |    |  x  |  fait
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/37)  | #37 Rallumer la prise après acquittement 
+| x  |    |    |  
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/38)  | #8 Afficher une alerte / une information sur le site lorsque l'alerte a été acquitté
+|   |    |    | 
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/39)  | #8 coder le bot télégram pour qu'il tienne informé lorsque l'alerte a été acquitté et que la situation est revenue à la normale 
+|  x |    |    |  
+|  (https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/40)  |  #12 Ajouter la possibilité de modifier le seuil depuis la page web 
+|  |  x  |    |  fait 
 |===
 == Réunions 
 
@@ -56,8 +64,8 @@ Groupe 3A2 Sujet 2 : Solardege et consommation électrique
 	** La réunion d'équipe a lieu le 16 / 01 à 9h30
 
  * Le deuxième Sprint dure du 14 / 01 au 23 / 01 (avec une évaluation le 14), soit une durée d'environ 10 jours.
- 	** La date du deuxième Sprint Review n'est pas encore définie. 
- 	** La date de la deuxième réunion d'équipe n'est pas encore définie. 
+ 	** Le deuxième Sprint Review aura lieu le 27 / 01 entre 12h30 et 13h, comme vu avec le client.
+ 	** La deuxième réunion d'équipe a eu lieu le 23 / 01 à 9h30.
 
 
 == Gestion de projet & Qualité
