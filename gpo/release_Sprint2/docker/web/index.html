@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Affichage MQTT direct</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+    const socket = io();
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Exemple</title>
+        <!-- Lien vers le fichier CSS de Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Lien vers le fichier CSS du thème Bootswatch -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
+    </head>
+    <!-- partie body -->
+    <body class="d-flex flex-column min-vh-100">
+        <header class="bg-primary text-white text-center py-1">
+            <div class="container">
+                <h1> Projet SolarEdge et Tasmota</h1>
+            </div>
+        </header>
+        <!-- Conteneur principal -->
+        <div class="container-fluid flex-grow-1">
+            <div class="column">
+                <!-- Script JavaScript pour ajouter la classe 'active' -->
+                <script>
+  // Récupère l'URL actuelle de la page
+  const currentPage = window.location.pathname;
+
+  // Sélectionne tous les liens du menu
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Parcourt les liens et compare leur attribut 'href' avec l'URL actuelle
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage.split("/").pop()) {
+      link.classList.add('active');
+    }
+  });
+                </script>
+                <!-- partie contenu principal -->
+                <br>
+                <center>
+                    <h2>Dernier message MQTT reçu :</h2>
+                    <pre id="msg"></pre>
+                    <H3 id="alerte"></H3>
+                </center>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table border="2">
+                            <tr>
+                                <td>
+                                    <b> date et heure du dernier échantillon</b>
+                                </td>
+                                <td>
+                                    <pre id="td1">En attente d'informations...</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> énergie générée depuis l’installation de l’onduleur (KW.h)</b>
+                                </td>
+                                <td>
+                                    <pre id="td2">En attente d'informations...</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> énergie générée depuis le début de l’année en cours (KW.h)</b>
+                                </td>
+                                <td>
+                                    <pre id="td3">En attente d'informations...</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> énergie générée depuis le début du moins en cours (kW.h)</b>
+                                </td>
+                                <td>
+                                    <pre id="td4">En attente d'informations...</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> énergie générée depuis le début du jour en cours (kW.h)</b>
+                                </td>
+                                <td>
+                                    <pre id="td5">En attente d'informations...</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> puissance instantanée générée (W)</b>
+                                </td>
+                                <td>
+                                    <pre id="td6">En attente d'informations...</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b> l’origine de la mesure</b>
+                                </td>
+                                <td>
+                                    <pre id="td7">En attente d'informations...</pre>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Graphe puissance instantanée -->
+                        <canvas id="powerChart" height="120">
+                            En attente
+                d'informations...
+                        </canvas>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-6" style="padding-top:20px;">
+                        <table border="2" class="col-md-5">
+                            <thead>
+                                <tr>
+                                    <th>Conso salle B110 (Wh)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="caseConso">
+                                        <pre id="consoSalle">en attente d'informations...</pre>
+                                    </td>
+                                </table>
+                            </tr>
+                        </tbody>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script>
+  let powerChart = null;
+  
+  function ensureChart(initialData = {}) {
+    const ctx = document.getElementById('powerChart').getContext('2d');
+    const timestamps = Object.keys(initialData);
+    const puissances = Object.values(initialData);
+
+    const labels = timestamps.map(ts => {
+      const date = new Date(ts);
+      return date.toLocaleTimeString('fr-FR');
+    });
+
+    powerChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Puissance (W)',
+          data: puissances,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: true,
+          tension: 0.2,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { 
+            display: true, 
+            title: { display: true, text: 'Temps' },
+            ticks: {
+              maxRotation: 45,
+              minRotation: 45
+            }
+          },
+          y: { 
+            display: true, 
+            title: { display: true, text: 'Puissance instantanée générée (W)' } 
+          }
+        }
+      }
+    });
+  }
+
+  socket.on("historique", data => {
+    console.log("Historique reçu:", data);
+    
+    const timestamps = Object.keys(data);
+    const puissances = Object.values(data);
+
+    // Formater les labels
+    const labels = timestamps.map(ts => {
+      const date = new Date(ts);
+      return date.toLocaleTimeString('fr-FR');
+    });
+
+    if (!powerChart) {
+      ensureChart(data);
+      return;
+    }
+
+    powerChart.data.labels = labels;
+    powerChart.data.datasets[0].data = puissances;
+    powerChart.update();
+  }); 
+
+  // Json production solaredge
+  socket.on("mqtt_message", msg => {
+      document.getElementById("msg").textContent = `Sur le topic : [${msg.topic}]\n`;
+
+      if (msg.topic == 'energy/solaredge/blagnac/overview') {
+          var test = JSON.stringify(msg.data, null, 2);
+          var split = JSON.parse(test);
+          var date = ``;
+
+          for (let i = 0; i < 19; i++) {
+              date += split.lastUpdateTime[i];
+          }
+      
+          document.getElementById("td1").textContent = date;
+          document.getElementById("td2").textContent = Object.values(split.lifeTimeData);
+          document.getElementById("td3").textContent = Object.values(split.lastYearData);
+          document.getElementById("td4").textContent = Object.values(split.lastMonthData);
+          document.getElementById("td5").textContent = Object.values(split.lastDayData);
+          document.getElementById("td6").textContent = Object.values(split.currentPower);
+          document.getElementById("td7").textContent = Object.values(split.measuredBy);
+      }
+
+      if (msg.topic == "energy/triphaso/by-room/B110/data") {
+          document.getElementById("consoSalle").textContent = msg.data[0].sum_positive_active_energy_Wh;
+          console.log(msg.data[0].sum_positive_active_energy_Wh);
+      }
+
+      if (msg.topic == "sandbox/student/SaeSolaredge/etat/consommation") {
+          var msgAlerte = JSON.stringify(msg.data, null, 2);
+          console.log(msgAlerte);
+          if (msgAlerte.includes("true")){
+              document.getElementById("caseConso").style.backgroundColor = "red";
+              document.getElementById("alerte").textContent = "ALERTE, LA SALLE EST EN SURCONSOMMATION !";
+          } else {
+              document.getElementById("caseConso").style.backgroundColor = "white";
+              document.getElementById("alerte").textContent = "";
+          }
+      }
+  });
+                </script>
+            </div>
+            <!-- Pied de page & scripts Bootstrap -->
+            <footer class="bg-dark text-white text-center py-1 mt-auto">
+                <div class="container">
+                    <p class="mb-0">
+                        &copy; 2026 SolarEdge et Tasmota. Tous droits
+            réservés.
+                    </p>
+                </div>
+            </footer>
+            <!-- Scripts JavaScript de Bootstrap -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+    </html>

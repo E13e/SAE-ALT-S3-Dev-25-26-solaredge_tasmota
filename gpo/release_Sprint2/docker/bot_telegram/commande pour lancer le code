@@ -1,0 +1,11 @@
+pour le broker local : mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf -v
+
+dans un terminal : ngrok http 3000
+
+dans un terminal pour importer les donnees :
+                         export MQTT_USERNAME_IUT="student"
+                         export MQTT_PASSWORD_IUT="student"
+                         export BOT_TOKEN="8500238669:AAF35Ny4T50gsD__YeUjkoCGs5TLOm5vEuY"
+                         export PUBLIC_BASE_URL="https://balmy-weston-unrotary.ngrok-free.dev"
+
+pour lancer le code : node index.js
