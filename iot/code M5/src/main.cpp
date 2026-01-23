@@ -22,6 +22,8 @@ bool alerteActive = false;
 
 unsigned long lastRestart = 0;
 const unsigned long restartInterval = 120000;
+unsigned long lastAlertSound = 0;
+const unsigned long alerteSoundInterval = 500;
 
 void setup() {
   M5.begin();
@@ -108,6 +110,13 @@ void loop() {
     M5.Lcd.println("Forte energie");
     M5.Lcd.println("Appuyez bouton");
     M5.Lcd.println("pour arreter");
+    
+    // Jouer un son d'alerte toutes les 500ms
+    if (millis() - lastAlertSound > alerteSoundInterval) {
+      M5.Speaker.tone(1000, 200);
+      lastAlertSound = millis();
+    }
+    
     return;
   }
 
