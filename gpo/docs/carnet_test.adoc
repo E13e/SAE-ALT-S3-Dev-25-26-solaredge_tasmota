@@ -38,7 +38,23 @@ Pour faire tourner l'application, il est nécessaire d'avoir Docker.
 
 | https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/17 faire en sorte que les informations du site se mettent à jour sans que l'utilisateur rafraîchisse le site | Quand l'utilisateur a lancé le site. | L'utilisateur trois à quatre minutes. | Le site devrait se régénérer automatiquement quand le programme python reçoit les informations MQTT | 
 
-| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/35 Refactorer le code de la page web sur du Javascript | Quand l'utilisateur lance le site, *non plus avec la release 1*, mais avec les mises à jours du code lors du Sprint 2 | L'utilisateur attend que la page se lance | l'image se lance sans problème et le site tourne sous Javascript | |
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/35 Refactorer le code de la page web sur du Javascript | Quand l'utilisateur lance le site, *non plus avec la release 1*, mais avec les mises à jours du code lors du Sprint 2 | L'utilisateur attend que la page se lance | l'image se lance sans problème et le site tourne sous Javascript | 
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/36 [faculatatif] Ajouter un système d'historique des messages MQTT des panneaux solaires |  Quand l'utilisateur lance l'application |  L'utilisateur attend patiemment. | Alors un tableau javascript stocke les fichiers json reçu en MQTT. Ce tableau est reset si l'utilisateur rafraîchit la page. | Cet issue n'est pas visible aux yeux de l'utilisateur, mais permet de mener à bien la tâche https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/45[#45]. 
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/45 Ajouter un graphique permettant d'observer l'évolution de la production des panneaux solaires au fil du temps | L'utilisateur lance l'application. | Il va sur le site à l'adresse http://127.0.0.1:8080/ | Un graphique se construit au fur et à mesure des données qu'il reçoit. |  
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/18 afficher une alerte sur le site si il y a une surconsommation | L'utilisateur va sur la page web. | L'utilisateur attend qu'une alerte se déclenche ou la déclenche manuellement (en baissant le seuil d'alerte, voir la https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/blob/main/gpo/docs/doc_utilisateur.adoc[documentation utilisateur.]| Un message apparait sur la page pour informer l'utilisateur. | la suite du test se trouve juste en dessous.
 
 
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/26 Traiter l'information d'acquittement sur le site | Lorsque l'application est en situation de surconsommation. | L'utilisateur attend qu'un technicien aquitte l'alerte ou le fait par lui même. | Le message d'alerte sur le site est retiré. | 
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/14 Créer le site | Lorsque l'application est lancée. | L'utilisateur entre l'adresse http://127.0.0.1:8080/ . | Une page web s'affiche. | 
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/40 Ajouter la possibilité de modifier le seuil depuis la page web | Lorsque l'application est lancée. | L'utilisateur peut entrer une nouvelle valeur de seuil. |  | Non terminée
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/23 | L'application est lancée et se trouve en état de surconsomamtion. |  Un technicien fait le nécessaire et appui sur un des trois boutons du M5 pour acquitter l'alerte. | L'alerte est acquittée. | 
+
+
+| https://github.com/E13e/SAE-ALT-S3-Dev-25-26-solaredge_tasmota/issues/28 Tester Image | Le développeur lance l'application. |  Il vérifie que la page web s'affiche bien. | La page web s'est affichée correctement. | 
 |===
