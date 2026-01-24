@@ -63,7 +63,7 @@ Groupe 3A2 Sujet 2 : Solardege et consommation électrique
  	** Le Sprint Review a lieu le lundi 12 / 01 à 17h 
 	** La réunion d'équipe a lieu le 16 / 01 à 9h30
 
- * Le deuxième Sprint dure du 14 / 01 au 23 / 01 (avec une évaluation le 14), soit une durée d'environ 10 jours.
+ * Le deuxième Sprint dure du 14 / 01 au 23 / 01 (avec une évaluation le 24), soit une durée d'environ 10 jours.
  	** Le deuxième Sprint Review aura lieu le 27 / 01 entre 12h30 et 13h, comme vu avec le client.
  	** La deuxième réunion d'équipe a eu lieu le 23 / 01 à 9h30.
 
