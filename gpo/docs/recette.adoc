@@ -1,10 +1,10 @@
-= Cahier de test  
+= Recette de test  
 
 == SAE 3.01 DevAPP + 
 {empty} +
 {empty} +
 
-Ce document est un carnet listant les différents tests pour vérifier le bon fonctionnement du projet et les éventuelles corrections à faire.
+Ce document est une recette listant les différents tests pour vérifier le bon fonctionnement du projet et les éventuelles corrections à faire.
 
 image::images/solaredge2.jpg[image solaredge panneaux solaires]
 
